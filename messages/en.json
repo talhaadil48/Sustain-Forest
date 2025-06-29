@@ -1,8 +1,11 @@
 {
   "welcome": "Welcome to Next.js",
-  "description": "This is a global internationalization system with English and Urdu support.",
   "currentLanguage": "Current Language: English",
-  "switchLanguage": "Switch to Urdu",
+  "switchLanguage": "English",
   "title": "Global Translation System",
-  "subtitle": "This content can be translated anywhere in the app"
+  "subtitle": "This content can be translated anywhere in the app",
+  "description": "Eco Park is a sustainable space using recycled materials, solar energy, and native plants.\nIt promotes eco-friendly living, water treatment, and carbon capture.\nThe park shows how waste can be reused creatively. It supports biodiversity and climate resilience.",
+  "mini-desc":"Eco Park is a sustainable space",
+  "left-heading":"Welcome to",
+  "right-heading":"Our Website"
 }

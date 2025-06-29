@@ -63,7 +63,7 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage, t }}>
-      <div dir={language === "ur" ? "rtl" : "ltr"}>{children}</div>
+      <div>{children}</div>
     </LanguageContext.Provider>
   )
 }
