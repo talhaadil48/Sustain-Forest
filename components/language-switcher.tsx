@@ -15,7 +15,7 @@ export function LanguageSwitcher() {
   {/* <p className="text-md text-gray-300">{t("currentLanguage")}</p> */}
   <button
     onClick={toggleLanguage}
-    className="px-4 py-2 bg-transparent text-white rounded-full hover:bg-transparent hover:text-gray-700 border border-black transition font-semibold shadow"
+    className="px-5 py-2 bg-transparent text-white rounded-full hover:bg-transparent hover:text-gray-700 border border-black transition h-12 font-semibold shadow-sm"
   >
     {t("switchLanguage")}
   </button>
