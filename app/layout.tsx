@@ -5,7 +5,7 @@ import "./globals.css"
 import Navbar from "@/components/Navbar"
 
 export const metadata: Metadata = {
-  title: "Global i18n System",
+  title: "Eco Centric",
   description: "Next.js with global internationalization",
     generator: 'v0.dev'
 }

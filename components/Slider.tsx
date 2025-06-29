@@ -56,26 +56,26 @@ export default function Accordion() {
 
  return (
     
-    <div className="relative min-h-screen py-16 overflow-hidden">
+    <div className="relative min-h-screen  overflow-hidden">
       {/* Blurred background layer */}
       <div
         className="absolute inset-0 bg-center bg-cover filter blur-lg scale-110 z-0"
         style={{ backgroundImage: "url('/images/bg-forest.jpg')" }}
         aria-hidden="true"
       />
-<div className="relative z-10 px-6 py-16 max-w-5xl text-center mx-auto text-white ">
+<div className="relative z-10 px-6 py-16 max-w-5xl text-center mx-auto text-white mb-9">
   <h1 className="text-5xl sm:text-4xl text-center font-bold mb-6 text-green-100  ">About Us</h1>
 
   <p className="text-base sm:text-lg leading-relaxed mb-4 drop-shadow-md">
-  This park is a living model of sustainability—built entirely from recycled materials. From benches to buildings, everything is crafted from construction scraps, lab equipment, and urban waste. It's more than a green space; it's a hands-on classroom, a prototype for circular design, and a statement on climate action.
+  {t("about_p1")}
   </p>
 
   <p className="text-base sm:text-lg leading-relaxed mb-4 drop-shadow-md">
-  The park includes a nature-based water filter, solar-powered photobioreactor, drought-resistant plants, native fruit trees, and upcycled furniture made from tyres and plastic. Every part tells a story and teaches an environmental principle.
+  {t("about_p2")}
   </p>
 
   <p className="text-base sm:text-lg leading-relaxed drop-shadow-md">
-  Our goal is to show that true sustainability needs intention and creativity—not big budgets. This space invites everyone to learn, explore, and imagine how to build with nature, not against it.
+  {t("about_p3")}
   </p>
 </div>
 
