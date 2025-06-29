@@ -1,0 +1,8 @@
+{
+  "welcome": "Welcome to Next.js",
+  "description": "This is a global internationalization system with English and Urdu support.",
+  "currentLanguage": "Current Language: English",
+  "switchLanguage": "Switch to Urdu",
+  "title": "Global Translation System",
+  "subtitle": "This content can be translated anywhere in the app"
+}
