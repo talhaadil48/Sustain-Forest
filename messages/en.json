@@ -7,5 +7,22 @@
   "description": "Eco Park is a sustainable space using recycled materials, solar energy, and native plants.\nIt promotes eco-friendly living, water treatment, and carbon capture.\nThe park shows how waste can be reused creatively. It supports biodiversity and climate resilience.",
   "mini-desc":"Eco Park is a sustainable space",
   "left-heading":"Welcome to",
-  "right-heading":"Our Website"
+  "right-heading":"Our Website",
+  "accordion_item_1_name": "Seating Platform",
+  "accordion_item_1_description": "An outdoor seating platform built entirely from construction waste. It combines durability, creativity, and sustainability in one space.",
+
+  "accordion_item_2_name": "Water Wetlands",
+  "accordion_item_2_description": "This system purifies pond water naturally—without chemicals or machines. It mimics wetland ecology and runs entirely on gravity and sunlight.",
+
+  "accordion_item_3_name": "Fruit Orchard",
+  "accordion_item_3_description": "Native fruit trees offer fresh food, shade, and biodiversity. They are low-maintenance, drought-resistant, and educational.",
+
+  "accordion_item_4_name": "Dryscape Plants",
+  "accordion_item_4_description": "These plants thrive with little water and minimal care. They beautify the park and strengthen climate resilience.",
+
+  "accordion_item_5_name": "Upcycled Furniture",
+  "accordion_item_5_description": "All seating here is made from tyres, old wood, and recycled plastic. It's sustainable, stylish, and durable for outdoor use.",
+
+  "accordion_item_6_name": "Reel Landscape",
+  "accordion_item_6_description": "A discarded cable reel became the centerpiece of a vibrant garden. It’s surrounded by reused bricks, stones, and a repurposed tree trunk."
 }

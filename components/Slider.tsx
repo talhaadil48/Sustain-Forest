@@ -1,21 +1,84 @@
 "use client"
 
 import { useState } from "react"
+interface AccordionItem {
+    id: string
+    backgroundImage: string
+    name: string
+    description: string
+}
+import { useLanguage } from "../components/language-provider"
 
-import { accordionData } from "@/lib/data"
+// Define the AccordionItem interface
+
 export default function Accordion() {
   const [activeItem, setActiveItem] = useState<string>("1")
   const [hoveredMobileItem, setHoveredMobileItem] = useState<string | null>(null)
+  const { t } = useLanguage()
+  const accordionData: AccordionItem[] = [
+  {
+    id: "1",
+    backgroundImage: "/images/Picture2.png",
+    name: t("accordion_item_1_name"),
+    description: t("accordion_item_1_description"),
+  },
+  {
+    id: "2",
+    backgroundImage: "/images/Picture3.png",
+    name: t("accordion_item_2_name"),
+    description: t("accordion_item_2_description"),
+  },
+  {
+    id: "3",
+    backgroundImage: "/images/Picture5.jpg",
+    name: t("accordion_item_3_name"),
+    description: t("accordion_item_3_description"),
+  },
+  {
+    id: "4",
+    backgroundImage: "/images/pic2.jpg",
+    name: t("accordion_item_4_name"),
+    description: t("accordion_item_4_description"),
+  },
+  {
+    id: "5",
+    backgroundImage: "/images/pic1.png",
+    name: t("accordion_item_5_name"),
+    description: t("accordion_item_5_description"),
+  },
+  {
+    id: "6",
+    backgroundImage: "/images/Picture11.jpg",
+    name: t("accordion_item_6_name"),
+    description: t("accordion_item_6_description"),
+  },
+];
 
-  return (
+ return (
     
-    <div className="relative min-h-screen py-20 overflow-hidden">
+    <div className="relative min-h-screen py-16 overflow-hidden">
       {/* Blurred background layer */}
       <div
         className="absolute inset-0 bg-center bg-cover filter blur-lg scale-110 z-0"
         style={{ backgroundImage: "url('/images/bg-forest.jpg')" }}
         aria-hidden="true"
       />
+<div className="relative z-10 px-6 py-16 max-w-5xl text-center mx-auto text-white ">
+  <h1 className="text-5xl sm:text-4xl text-center font-bold mb-6 text-green-100  ">About Us</h1>
+
+  <p className="text-base sm:text-lg leading-relaxed mb-4 drop-shadow-md">
+  This park is a living model of sustainability—built entirely from recycled materials. From benches to buildings, everything is crafted from construction scraps, lab equipment, and urban waste. It's more than a green space; it's a hands-on classroom, a prototype for circular design, and a statement on climate action.
+  </p>
+
+  <p className="text-base sm:text-lg leading-relaxed mb-4 drop-shadow-md">
+  The park includes a nature-based water filter, solar-powered photobioreactor, drought-resistant plants, native fruit trees, and upcycled furniture made from tyres and plastic. Every part tells a story and teaches an environmental principle.
+  </p>
+
+  <p className="text-base sm:text-lg leading-relaxed drop-shadow-md">
+  Our goal is to show that true sustainability needs intention and creativity—not big budgets. This space invites everyone to learn, explore, and imagine how to build with nature, not against it.
+  </p>
+</div>
+
 
       {/* Accordion Content */}
       <div className="relative z-10 w-full">
