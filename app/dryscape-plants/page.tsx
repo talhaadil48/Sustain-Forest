@@ -8,9 +8,9 @@ export default function Home() {
   ]
 
   const sampleImages = [
-    "/placeholder.svg?height=400&width=600",
-    "/placeholder.svg?height=400&width=600",
-    "/placeholder.svg?height=400&width=600",
+    "/images/AGAVE.png?height=400&width=600",
+    "/images/ALOVERA.png?height=400&width=600",
+    "/images/LEMONGRASSS.png?height=400&width=600",
   ]
 
     const title = "DryScape Plants"

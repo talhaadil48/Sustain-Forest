@@ -194,57 +194,71 @@ export default function ShowcaseBanner({ descriptions, images , title ,titleDesr
         </div>
       </section>
 
-      {/* Footer Banner */}
-      <section
-        ref={footerRef}
-        className="relative py-24 md:py-32 flex items-center justify-center overflow-hidden"
-        style={{
-          backgroundImage: `url('/images/bg-forest.jpg?height=600&width=1200')`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-        }}
-      >
-        {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/50 to-black/70"></div>
+  {/* Footer Banner */}
+<section
+  ref={footerRef}
+  className="relative py-24 md:py-32 flex items-center justify-center overflow-hidden"
+  style={{
+    backgroundImage: `url('/images/bg-forest.jpg?height=600&width=1200')`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+  }}
+>
+  {/* Gradient Overlay */}
+  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/50 to-black/70"></div>
 
-        {/* Footer Content */}
-        <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto opacity-0 transform translate-y-8">
-          <div className="space-y-8">
-            {/* Decorative Line */}
-            <div className="flex items-center justify-center gap-4">
-              <div className="h-px bg-gradient-to-r from-transparent via-white to-transparent w-24"></div>
-              <div className="w-3 h-3 bg-white rounded-full"></div>
-              <div className="h-px bg-gradient-to-r from-transparent via-white to-transparent w-24"></div>
-            </div>
+  {/* Footer Content */}
+  <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto animate-fade-in-up">
+    <div className="space-y-8">
+      {/* Decorative Line */}
+      <div className="flex items-center justify-center gap-4">
+        <div className="h-px bg-gradient-to-r from-transparent via-white to-transparent w-24"></div>
+        <div className="w-3 h-3 bg-white rounded-full"></div>
+        <div className="h-px bg-gradient-to-r from-transparent via-white to-transparent w-24"></div>
+      </div>
 
-            <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">Thank You for Exploring</h3>
+      <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">Thank You for Exploring</h3>
 
-            <p className="text-xl md:text-2xl opacity-90 leading-relaxed">
-              Our vision and commitment to creating a better tomorrow
-            </p>
+      <p className="text-xl md:text-2xl opacity-90 leading-relaxed">
+        Our vision and commitment to creating a better tomorrow
+      </p>
 
-            {/* Decorative Icons */}
-            <div className="flex justify-center gap-6 pt-8">
-              <div className="w-12 h-12 border-2 border-white rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-all duration-300 cursor-pointer">
-                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 2L2 7v10c0 5.55 3.84 9.739 9 11 5.16-1.261 9-5.45 9-11V7l-10-5z" />
-                </svg>
-              </div>
-              <div className="w-12 h-12 border-2 border-white rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-all duration-300 cursor-pointer">
-                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
-                </svg>
-              </div>
-              <div className="w-12 h-12 border-2 border-white rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-all duration-300 cursor-pointer">
-                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                </svg>
-              </div>
-            </div>
-          </div>
+      {/* Thank You Text */}
+      <p className="text-lg md:text-xl text-white/80 pt-2">We appreciate your time and curiosity 🌿</p>
+
+      {/* Back to Homepage Button */}
+      <div className="pt-6">
+        <a
+          href="/"
+          className="inline-block px-6 py-3 bg-transparent text-white border border-white font-semibold rounded-lg shadow hover:bg-white hover:text-black transition duration-300"
+        >
+          Back to Homepage
+        </a>
+      </div>
+
+      {/* Decorative Icons */}
+      <div className="flex justify-center gap-6 pt-10">
+        <div className="w-12 h-12 border-2 border-white rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-all duration-300 cursor-pointer">
+          <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2L2 7v10c0 5.55 3.84 9.739 9 11 5.16-1.261 9-5.45 9-11V7l-10-5z" />
+          </svg>
         </div>
-      </section>
+        <div className="w-12 h-12 border-2 border-white rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-all duration-300 cursor-pointer">
+          <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+          </svg>
+        </div>
+        <div className="w-12 h-12 border-2 border-white rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-all duration-300 cursor-pointer">
+          <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
     </div>
   )
 }

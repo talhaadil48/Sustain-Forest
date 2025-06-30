@@ -8,9 +8,9 @@ export default function Home() {
   ]
 
   const sampleImages = [
-    "/placeholder.svg?height=400&width=600",
-    "/placeholder.svg?height=400&width=600",
-    "/placeholder.svg?height=400&width=600",
+    "/images/Picture11.jpg?height=400&width=600",
+    "/images/Picture11.jpg?height=400&width=600",
+    "/images/Picture11.jpg?height=400&width=600",
   ]
 
     const title = `Reel Landscape`

@@ -8,9 +8,9 @@ export default function Home() {
   ]
 
   const sampleImages = [
-    "/placeholder.svg?height=400&width=600",
-    "/placeholder.svg?height=400&width=600",
-    "/placeholder.svg?height=400&width=600",
+    "/images/Picture10.png?height=400&width=600",
+    "/images/pic3.jpg?height=400&width=600",
+    "/images/pic1.png?height=400&width=600",
   ]
 
     const title = "Upcycled Furniture"
