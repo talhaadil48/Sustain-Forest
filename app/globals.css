@@ -74,3 +74,26 @@ body{
     @apply bg-background text-foreground;
     }
 }
+
+/* * Prevent flash of unstyled content */ *
+html {
+  visibility: hidden;
+}
+
+html.loaded {
+  visibility: visible;
+}
+
+/* Smooth transitions for all elements */
+* {
+  transition-property: opacity, transform;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+}
+
+/* Ensure images don't show until fully loaded */
+
+/* Prevent layout shift during loading */
+body {
+  overflow-x: hidden;
+}
