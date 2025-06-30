@@ -7,7 +7,7 @@ interface AccordionItem {
     name: string
     description: string
 }
-import { useLanguage } from "../components/language-provider"
+import { useLanguage } from "./LanguageProvider."
 
 // Define the AccordionItem interface
 

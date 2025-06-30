@@ -213,9 +213,6 @@ export default function AdminPage() {
                                 Name
                               </th>
                               <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                ID
-                              </th>
-                              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                 Created At
                               </th>
                             </tr>
@@ -225,9 +222,6 @@ export default function AdminPage() {
                               <tr key={user.id}>
                                 <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                                   {user.name}
-                                </td>
-                                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 font-mono">
-                                  {user.id.slice(0, 8)}...
                                 </td>
                                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                                   {formatDate(user.created_at)}
@@ -258,7 +252,7 @@ export default function AdminPage() {
                                 Rating
                               </th>
                               <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                User ID
+                                Name
                               </th>
                               <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                 Created At
@@ -280,7 +274,7 @@ export default function AdminPage() {
                                   </div>
                                 </td>
                                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 font-mono">
-                                  {review.user_id ? `${review.user_id.slice(0, 8)}...` : "N/A"}
+                                  {users.find((user) => user.id === review.user_id)?.name || "Unknown User"}
                                 </td>
                                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                                   {formatDate(review.created_at)}

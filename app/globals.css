@@ -4,6 +4,7 @@
 
 body{
     background-color: rgb(158, 138, 113);
+   overflow-x: hidden;
 }
 
 

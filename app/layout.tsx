@@ -1,14 +1,14 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { LanguageProvider } from "../components/language-provider"
 import "./globals.css"
-import Navbar from "@/components/Navbar"
+import { LanguageProvider } from "@/components/LanguageProvider."
 
 export const metadata: Metadata = {
   title: "Eco Centric",
   description: "Next.js with global internationalization",
     generator: 'v0.dev'
 }
+import LayoutWrapper from "@/components/LayoutWrapper"
 
 export default function RootLayout({
   children,
@@ -19,8 +19,9 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <LanguageProvider>
-          <Navbar/>
-          {children}
+           <LayoutWrapper>
+            {children}
+            </LayoutWrapper>
           </LanguageProvider>
       </body>
     </html>

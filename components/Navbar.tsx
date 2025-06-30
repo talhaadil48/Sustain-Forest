@@ -1,4 +1,4 @@
-import { LanguageSwitcher } from './language-switcher';
+import { LanguageSwitcher } from "./LanguageSwitcher";
 
 export default function Navbar() {
   return (
