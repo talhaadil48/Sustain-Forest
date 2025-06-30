@@ -12,7 +12,7 @@ export default function ClientLoaderWrapper({
 
   useEffect(() => {
     const handleLoad = () => {
-      // Add slight delay for smoother experience
+    
       setTimeout(() => setLoading(false), 1000)
     }
 

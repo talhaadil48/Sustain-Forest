@@ -9,9 +9,7 @@ export const metadata: Metadata = {
   description: "Next.js with global internationalization",
   generator: 'v0.dev',
   icons: "/eco-logo.png",
-  viewport:
-    "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-}
+} 
 import LayoutWrapper from "@/components/LayoutWrapper"
 
 export default function RootLayout({
