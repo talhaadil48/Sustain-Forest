@@ -1,6 +1,7 @@
 "use client";
 
 import Slider from "@/components/Slider";
+// import { LanguageSwitcher } from "../components/language-switcher";
 import Header from "@/components/Header";
 
 export default function Page() {
@@ -16,9 +17,9 @@ export default function Page() {
       </div>
 
       {/* Top blur of Slider */}
-      <div className="relative w-full h-10 z-20 -mb-4 ">
+      <div className="relative w-full h-10 z-20 -mb-4 overflow-x-clip">
         <div
-          className="absolute inset-0 bg-center filter blur-md scale-110 z-0 bg-transparent"
+          className="absolute inset-0 bg-center filter blur-md scale-110 z-0 bg-transparent" 
           style={{ backgroundImage: "url('/images/bg-forest.jpg')" }}
           aria-hidden="true"
         />
