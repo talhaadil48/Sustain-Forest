@@ -80,7 +80,7 @@ export default function Accordion() {
   }
 
   return (
-    <div className="relative min-h-screen overflow-hidden">
+    <div className="relative min-h-screen overflow-hidden pb-10">
       {/* Blurred background layer */}
       <div
         className="absolute inset-0 bg-center bg-cover filter blur-lg scale-110 z-0"
@@ -146,7 +146,6 @@ export default function Accordion() {
                     <p className="text-gray-200 text-sm leading-relaxed mb-4">{item.description}</p>
                     <div className="w-20 h-1 bg-gradient-to-r from-emerald-700 to-teal-400 rounded-full shadow-lg shadow-emerald-400/30" />
                     {/* Visual indicator for second click */}
-                    <p className="text-xs text-emerald-300 mt-2 opacity-75">Click again to visit</p>
                   </div>
                 </div>
 

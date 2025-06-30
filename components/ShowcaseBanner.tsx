@@ -145,7 +145,7 @@ export default function ShowcaseBanner({
       </section>
 
       {/* Main Content Section */}
-      <section className=" py-16 md:py-24 px-4 md:px-8 bg-gradient-to-b from-gray-50 to-white">
+      <section className=" py-16 md:py-24 px-4 md:px-8 bg-green-50">
         <div className="max-w-6xl mx-auto space-y-16 md:space-y-24">
           {blockTitles.map((title, index) => (
             <div

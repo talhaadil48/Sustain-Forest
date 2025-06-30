@@ -6,7 +6,8 @@ import { LanguageProvider } from "@/components/LanguageProvider."
 export const metadata: Metadata = {
   title: "Eco Centric",
   description: "Next.js with global internationalization",
-    generator: 'v0.dev'
+    generator: 'v0.dev',
+    icons:"/eco-logo.png"
 }
 import LayoutWrapper from "@/components/LayoutWrapper"
 
