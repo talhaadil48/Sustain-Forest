@@ -33,12 +33,23 @@ export function ReviewModal({ isOpen, onClose }: ReviewModalProps) {
   }
 
   // Handle form submission
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     if (name.trim() && rating > 0) {
-      console.log("Review submitted:", { name, review, rating })
-      // Here you would typically send to your API
-      onClose()
+      const response = await fetch("/api/send-user", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          username: name,
+          content: review,
+          star: rating,
+        }),
+      });
+      console.log(response.json());
+      onClose();
+
     }
   }
 

@@ -16,7 +16,6 @@ export default function LoginPage() {
     e.preventDefault()
     setLoading(true)
     setError("")
-    console.log(process.env.NEXT_PUBLIC_USER, process.env.NEXT_PUBLIC_PASS,process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY)
 
     // Simple authentication check
     if (username === process.env.NEXT_PUBLIC_USER && password === process.env.NEXT_PUBLIC_PASS) {

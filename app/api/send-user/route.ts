@@ -4,6 +4,7 @@ import { supabase } from '@/lib/supabaseClient'
 export async function POST(req: Request) {
   const body = await req.json()
   const { username, content, star } = body
+  console.log(body);
 
   if (!username || !content || typeof star !== 'number') {
     return NextResponse.json({ error: 'Missing fields' }, { status: 400 })
@@ -33,3 +34,5 @@ export async function POST(req: Request) {
 
   return NextResponse.json({ message: 'Saved' })
 }
+
+

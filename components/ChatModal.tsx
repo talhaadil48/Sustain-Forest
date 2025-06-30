@@ -29,6 +29,29 @@ export function ChatbotModal({ isOpen, onClose }: ChatbotModalProps) {
   const [isTyping, setIsTyping] = useState(false)
   const messagesEndRef = useRef<HTMLDivElement>(null)
 
+  const callOpenAI = async (userMessage: string): Promise<string> => {
+  try {
+    const res = await fetch("/api/openai", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ message: userMessage }),
+    })
+
+    if (!res.ok) {
+      throw new Error("Failed to fetch response from OpenAI")
+    }
+
+    const data = await res.json()
+    return data.response || "Sorry, I couldn't understand that."
+  } catch (error) {
+    console.error("OpenAI error:", error)
+    return "Oops! Something went wrong. Try again later."
+  }
+}
+
+
   // Auto-scroll to bottom when new messages arrive
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
@@ -45,35 +68,22 @@ export function ChatbotModal({ isOpen, onClose }: ChatbotModalProps) {
     }
   }
 
-  // Simulate bot response
-  const simulateBotResponse = (userMessage: string) => {
-    setIsTyping(true)
+const simulateBotResponse = async (userMessage: string) => {
+  setIsTyping(true)
 
-    setTimeout(
-      () => {
-        const responses = [
-          "That's an interesting question! Let me help you with that.",
-          "I understand what you're asking. Here's what I think...",
-          "Thanks for reaching out! I'm here to assist you.",
-          "Great question! Let me provide you with some information.",
-          "I'd be happy to help you with that. Here's my suggestion...",
-        ]
+  const reply = await callOpenAI(userMessage)
 
-        const randomResponse = responses[Math.floor(Math.random() * responses.length)]
-
-        const botMessage: Message = {
-          id: Date.now().toString(),
-          text: randomResponse,
-          sender: "bot",
-          timestamp: new Date(),
-        }
-
-        setMessages((prev) => [...prev, botMessage])
-        setIsTyping(false)
-      },
-      1000 + Math.random() * 2000,
-    ) // Random delay between 1-3 seconds
+  const botMessage: Message = {
+    id: Date.now().toString(),
+    text: reply,
+    sender: "bot",
+    timestamp: new Date(),
   }
+
+  setMessages((prev) => [...prev, botMessage])
+  setIsTyping(false)
+}
+
 
   // Handle form submission
   const handleSubmit = (e: React.FormEvent) => {
