@@ -14,6 +14,9 @@ export default function PerfectLoader({ children }: PerfectLoaderProps) {
   const [totalImages, setTotalImages] = useState(0)
   const [loadingPhase, setLoadingPhase] = useState("Initializing...")
   const [progress, setProgress] = useState(0)
+  
+  //write code so only loader shows irrepsitive of anythinh
+
 
   useEffect(() => {
     let mounted = true
@@ -316,8 +319,8 @@ export default function PerfectLoader({ children }: PerfectLoaderProps) {
 
               {/* Logo with floating animation */}
               <div className="relative z-10 forest-float">
-                <div className="w-28 h-28 sm:w-36 sm:h-36 md:w-40 md:h-40 bg-gradient-to-br from-lime-400 to-green-600 rounded-full flex items-center justify-center drop-shadow-lg">
-                  <Trees className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 text-white" />
+                <div>
+                  <img src="/eco-logo.png" alt="alt" className="h-28 w-28"></img>
                 </div>
               </div>
 
@@ -330,12 +333,7 @@ export default function PerfectLoader({ children }: PerfectLoaderProps) {
               />
             </div>
 
-            {/* Enhanced loading text */}
-            <div className="text-center mb-6">
-              <p className="text-lime-700 text-xl sm:text-2xl font-semibold mb-2 animate-pulse">Growing Forest</p>
-              <p className="text-green-600 text-sm sm:text-base font-medium opacity-80">{loadingPhase}</p>
-            </div>
-
+  
             {/* Stylized progress indicator */}
             <div className="flex items-center space-x-3 mb-4">
               <div className="w-3 h-3 bg-lime-500 rounded-full shadow-lg grass-bounce-1" />
@@ -353,15 +351,7 @@ export default function PerfectLoader({ children }: PerfectLoaderProps) {
               />
             </div>
 
-            {/* Progress text */}
-            <div className="mt-4 text-center">
-              <p className="text-green-600 text-sm font-medium">{progress}% Complete</p>
-              {totalImages > 0 && (
-                <p className="text-green-500 text-xs mt-1">
-                  Images: {loadedImages}/{totalImages}
-                </p>
-              )}
-            </div>
+           
           </div>
         </div>
       </>
