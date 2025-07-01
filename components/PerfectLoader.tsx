@@ -199,7 +199,7 @@ export default function PerfectLoader({ children }: PerfectLoaderProps) {
     setTimeout(() => {
       checkAllResourcesLoaded()
       console.log("DONE")
-    }, 1000)
+    }, 500)
 
     return () => {
       mounted = false
