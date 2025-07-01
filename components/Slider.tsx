@@ -84,7 +84,7 @@ export default function Accordion() {
       {/* Blurred background layer */}
       <div
         className="absolute inset-0 bg-center bg-cover filter blur-lg scale-110 z-0"
-        style={{ backgroundImage: "url('/images/bg-forest.jpg')" }}
+        style={{ backgroundImage: "url('/images/bg-forest.webp')" }}
         aria-hidden="true"
       />
 

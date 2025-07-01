@@ -79,6 +79,7 @@ export default function PerfectLoader({ children }: PerfectLoaderProps) {
     const waitForDocumentReady = () => {
       return new Promise<void>((resolve) => {
         if (document.readyState === "complete") {
+          console.log(document.readyState)
           resolve()
         } else {
           const handleLoad = () => {
@@ -197,7 +198,8 @@ export default function PerfectLoader({ children }: PerfectLoaderProps) {
     // Start loading process with a small initial delay
     setTimeout(() => {
       checkAllResourcesLoaded()
-    }, 100)
+      console.log("DONE")
+    }, 1000)
 
     return () => {
       mounted = false

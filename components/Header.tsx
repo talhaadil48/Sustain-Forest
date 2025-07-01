@@ -5,7 +5,7 @@ function Header() {
   return (
     <div
       className="relative h-screen w-full bg-cover bg-center p-[10%]"
-      style={{ backgroundImage: "url('/images/bg-eco.jpg')" }}
+      style={{ backgroundImage: "url('/images/bg-eco.webp')" }}
     >
       {/* Blurred left half */}
       <div className="absolute inset-0 flex">
@@ -20,7 +20,7 @@ function Header() {
         </div>
         <div className="relative flex">
           {/* Left (transparent text on blur side) */}
-          <span className="text-[7.5vw] font-extrabold text-transparent bg-[url('/images/bg-eco.jpg')] bg-right bg-clip-text">
+          <span className="text-[7.5vw] font-extrabold text-transparent bg-[url('/images/bg-eco.webp')] bg-right bg-clip-text">
             {t("left-heading")}&nbsp;
           </span>
 

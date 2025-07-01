@@ -119,7 +119,7 @@ export default function ShowcaseBanner({
         ref={heroRef}
         className=" relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden"
         style={{
-          backgroundImage: `url('/images/bg-eco.jpg?height=800&width=1200')`,
+          backgroundImage: `url('/images/bg-eco.webp?height=800&width=1200')`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
@@ -219,7 +219,7 @@ export default function ShowcaseBanner({
         ref={footerRef}
         className="relative py-24 md:py-32 flex items-center justify-center overflow-hidden"
         style={{
-          backgroundImage: `url('/images/bg-forest.jpg?height=600&width=1200')`,
+          backgroundImage: `url('/images/bg-forest.webp?height=600&width=1200')`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
