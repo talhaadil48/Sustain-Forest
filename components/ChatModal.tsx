@@ -30,29 +30,27 @@ export function ChatbotModal({ isOpen, onClose }: ChatbotModalProps) {
   const messagesEndRef = useRef<HTMLDivElement>(null)
 
   const callOpenAI = async (userMessage: string): Promise<string> => {
-  try {
-    const res = await fetch("/api/openai", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ message: userMessage }),
-    })
+    try {
+      const res = await fetch("/api/openai", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ message: userMessage }),
+      })
 
-    if (!res.ok) {
-      throw new Error("Failed to fetch response from OpenAI")
+      if (!res.ok) {
+        throw new Error("Failed to fetch response from OpenAI")
+      }
+
+      const data = await res.json()
+      return data.response || "Sorry, I couldn't understand that."
+    } catch (error) {
+      console.error("OpenAI error:", error)
+      return "Oops! Something went wrong. Try again later."
     }
-
-    const data = await res.json()
-    return data.response || "Sorry, I couldn't understand that."
-  } catch (error) {
-    console.error("OpenAI error:", error)
-    return "Oops! Something went wrong. Try again later."
   }
-}
 
-
-  // Auto-scroll to bottom when new messages arrive
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
   }
@@ -61,31 +59,28 @@ export function ChatbotModal({ isOpen, onClose }: ChatbotModalProps) {
     scrollToBottom()
   }, [messages])
 
-  // Handle outside click
   const handleBackdropClick = (e: React.MouseEvent) => {
     if (e.target === e.currentTarget) {
       onClose()
     }
   }
 
-const simulateBotResponse = async (userMessage: string) => {
-  setIsTyping(true)
+  const simulateBotResponse = async (userMessage: string) => {
+    setIsTyping(true)
 
-  const reply = await callOpenAI(userMessage)
+    const reply = await callOpenAI(userMessage)
 
-  const botMessage: Message = {
-    id: Date.now().toString(),
-    text: reply,
-    sender: "bot",
-    timestamp: new Date(),
+    const botMessage: Message = {
+      id: Date.now().toString(),
+      text: reply,
+      sender: "bot",
+      timestamp: new Date(),
+    }
+
+    setMessages((prev) => [...prev, botMessage])
+    setIsTyping(false)
   }
 
-  setMessages((prev) => [...prev, botMessage])
-  setIsTyping(false)
-}
-
-
-  // Handle form submission
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     if (!inputValue.trim()) return
@@ -109,7 +104,7 @@ const simulateBotResponse = async (userMessage: string) => {
       className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4"
       onClick={handleBackdropClick}
     >
-      <div className="bg-[#B6aD90] rounded-2xl shadow-2xl w-full max-w-md h-[600px] max-h-[90vh] flex flex-col overflow-hidden">
+      <div className="bg-[#B6aD90] rounded-2xl shadow-2xl w-full max-w-md h-[600px] max-h-[90vh] flex flex-col overflow-hidden animate-fade-in-scale">
         {/* Header */}
         <div className="flex items-center justify-between p-4 border-b border-gray-200 bg-green-50">
           <div className="flex items-center gap-3">
