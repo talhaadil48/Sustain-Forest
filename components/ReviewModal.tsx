@@ -125,7 +125,7 @@ export function ReviewModal({ isOpen, onClose }: ReviewModalProps) {
             </div>
           </div>
 
-          <div>
+          <div> 
             <label
               htmlFor="review"
               className="block text-sm font-medium text-gray-700 mb-2"
