@@ -4,8 +4,9 @@ import { supabase } from '@/lib/supabaseClient'
 export async function POST(req: Request) {
   const body = await req.json()
   const { userid, username, content, star } = body
+ 
 
-  if (!userid || !username || !content || typeof star !== 'number') {
+  if (!userid || !username || typeof star !== 'number') {
     return NextResponse.json({ error: 'Missing fields' }, { status: 400 })
   }
 
