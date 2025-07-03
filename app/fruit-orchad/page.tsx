@@ -10,9 +10,9 @@ export default function FruitOrchardPage() {
         title={t("fruit_orchard_title")}
         titleDesription={t("fruit_orchard_titleDescription")}
         images={[
-          "/images/Picture4.jpg?height=400&width=600",
-          "/images/Picture5.jpg?height=400&width=600",
-          "/images/Picture4.jpg?height=400&width=600",
+          "/images/Picture4.webp?height=400&width=600",
+          "/images/Picture5.webp?height=400&width=600",
+          "/images/pic1.webp?height=400&width=600",
         ]}
         descriptions={[
           t("fruit_orchard_descriptions_0"),

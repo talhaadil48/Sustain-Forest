@@ -10,9 +10,9 @@ export default function UpcycledFurniturePage() {
         title={t("upcycled_furniture_title")}
         titleDesription={t("upcycled_furniture_titleDescription")}
         images={[
-          "/images/Picture10.png?height=400&width=600",
-          "/images/pic3.jpg?height=400&width=600",
-          "/images/pic1.png?height=400&width=600",
+          "/images/new-pic6.webp?height=400&width=600",
+          "/images/Picture10.webp?height=400&width=600",
+          "/images/pic3.webp?height=400&width=600",
         ]}
         descriptions={[
           t("upcycled_furniture_descriptions_0"),

@@ -10,9 +10,9 @@ export default function WaterWetlandPage() {
         title={t("water_wetland_title")}
         titleDesription={t("water_wetland_titleDescription")}
         images={[
-          "/images/Picture3.png?height=400&width=600",
-          "/images/Picture3.png?height=400&width=600",
-          "/images/Picture3.png?height=400&width=600",
+          "/images/new-pic1.webp?height=400&width=600",
+          "/images/new-pic3.webp?height=400&width=600",
+          "/images/new-pic4.webp?height=400&width=600",
         ]}
         descriptions={[
           t("water_wetland_descriptions_0"),

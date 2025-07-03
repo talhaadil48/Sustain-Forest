@@ -25,42 +25,42 @@ export default function Accordion() {
   const accordionData: AccordionItem[] = [
     {
       id: "1",
-      backgroundImage: "/images/Picture2.png",
+      backgroundImage: "/images/Picture2.webp",
       name: t("accordion_item_1_name"),
       description: t("accordion_item_1_description"),
       link: "/meeting-area",
     },
     {
       id: "2",
-      backgroundImage: "/images/Picture3.png",
+      backgroundImage: "/images/Picture3.webp",
       name: t("accordion_item_2_name"),
       description: t("accordion_item_2_description"),
       link: "/water-wetlands",
     },
     {
       id: "3",
-      backgroundImage: "/images/Picture5.jpg",
+      backgroundImage: "/images/Picture5.webp",
       name: t("accordion_item_3_name"),
       description: t("accordion_item_3_description"),
       link: "/fruit-orchad",
     },
     {
       id: "4",
-      backgroundImage: "/images/pic2.jpg",
+      backgroundImage: "/images/pic2.webp",
       name: t("accordion_item_4_name"),
       description: t("accordion_item_4_description"),
       link: "/dryscape-plants",
     },
     {
       id: "5",
-      backgroundImage: "/images/pic1.png",
+      backgroundImage: "/images/pic1.webp",
       name: t("accordion_item_5_name"),
       description: t("accordion_item_5_description"),
       link: "/furniture",
     },
     {
       id: "6",
-      backgroundImage: "/images/Picture11.jpg",
+      backgroundImage: "/images/Picture11.webp",
       name: t("accordion_item_6_name"),
       description: t("accordion_item_6_description"),
       link: "/reel-landscape",
@@ -107,7 +107,7 @@ export default function Accordion() {
         className={`absolute inset-0 bg-center bg-cover filter blur-lg scale-110 z-0 ${
           isVisible ? "animate-fade-in-scale" : "opacity-0"
         }`}
-        style={{ backgroundImage: "url('/images/bg-forest.jpg')" }}
+        style={{ backgroundImage: "url('/images/bg-forest.webp')" }}
         aria-hidden="true"
       />
       

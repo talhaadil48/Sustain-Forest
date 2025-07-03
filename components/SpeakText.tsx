@@ -32,7 +32,6 @@ export default function SpeakText({ textKey }: { textKey: string }) {
       voices.find((v) => v.lang.toLowerCase().startsWith("en"));
 
     if (voice) utterance.voice = voice;
-
     window.speechSynthesis.cancel();
     window.speechSynthesis.speak(utterance);
     setIsSpeaking(true);
