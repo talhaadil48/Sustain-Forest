@@ -14,6 +14,7 @@ export function ReviewModal({ isOpen, onClose }: ReviewModalProps) {
   const [review, setReview] = useState("");
   const [rating, setRating] = useState(0);
   const [hoveredStar, setHoveredStar] = useState(0);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
     if (!isOpen) {
@@ -21,6 +22,7 @@ export function ReviewModal({ isOpen, onClose }: ReviewModalProps) {
       setReview("");
       setRating(0);
       setHoveredStar(0);
+      setIsSubmitting(false);
     }
   }, [isOpen]);
 
@@ -34,25 +36,31 @@ export function ReviewModal({ isOpen, onClose }: ReviewModalProps) {
     e.preventDefault();
 
     if (name.trim() && rating > 0) {
+      setIsSubmitting(true); // Start loading
       const guestId = localStorage.getItem("guest_id");
 
-      const response = await fetch("/api/send-user", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          username: name,
-          content: review,
-          star: rating,
-          userid: guestId, // include guest ID here
-        }),
-      });
+      try {
+        const response = await fetch("/api/send-user", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            username: name,
+            content: review,
+            star: rating,
+            userid: guestId,
+          }),
+        });
 
-      const result = await response.json(); // Make sure to await the JSON result
-      console.log(result);
-
-      onClose();
+        const result = await response.json();
+        console.log(result);
+        onClose();
+      } catch (error) {
+        console.error("Submission failed:", error);
+      } finally {
+        setIsSubmitting(false); // Stop loading
+      }
     }
   };
 
@@ -125,7 +133,7 @@ export function ReviewModal({ isOpen, onClose }: ReviewModalProps) {
             </div>
           </div>
 
-          <div> 
+          <div>
             <label
               htmlFor="review"
               className="block text-sm font-medium text-gray-700 mb-2"
@@ -144,14 +152,14 @@ export function ReviewModal({ isOpen, onClose }: ReviewModalProps) {
 
           <button
             type="submit"
-            disabled={!isFormValid}
+            disabled={!isFormValid || isSubmitting}
             className={`w-full py-3 px-4 rounded-lg font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-red-900 focus:ring-offset-2 ${
-              isFormValid
+              isFormValid && !isSubmitting
                 ? "bg-[#936639] hover:bg-[#c88d51] text-white"
-                : "bg-gray-300 text-gray-500 cursor-not-allowed"
+                : "bg-[#b4b0af] text-gray-700 cursor-not-allowed"
             }`}
           >
-            Submit Review
+            {isSubmitting ? "Submitting..." : "Submit Review"}
           </button>
         </form>
       </div>
