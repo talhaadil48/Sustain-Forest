@@ -21,6 +21,7 @@ function Header() {
         <div className="text-white mb-4 text-base sm:text-lg md:text-xl text-[19px] animate-fade-in-up animation-delay-300">
           <p>{t("mini-desc")}
               </p>
+             
         </div>
         <div className="relative flex">
           {/* Left (transparent text on blur side) */}
@@ -35,8 +36,9 @@ function Header() {
       </div>
 
       {/* Paragraph on the blurred left side with animation */}
-      <div className="absolute top-[58%] left-4 sm:left-16 max-w-[90%] sm:max-w-md text-white text-sm md:text-lg lg:text-xl leading-relaxed text-center md:text-left animate-fade-in-up animation-delay-1000">
+      <div className="absolute top-[60%] left-4 sm:left-16 max-w-[90%] sm:max-w-md text-white text-sm md:text-lg lg:text-xl leading-relaxed text-center md:text-left animate-fade-in-up animation-delay-1000">
         <p>{t("description")}</p>
+        <SpeakText textKey="description"/>
       </div>
     </div>
   )
