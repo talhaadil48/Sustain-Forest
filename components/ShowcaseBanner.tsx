@@ -59,7 +59,7 @@ export default function ShowcaseBanner({
   ];
 
   return (
-    <div className="w-full max-w-7xl mx-auto">
+    <div className="w-full">
       <style jsx>{`
         @keyframes fadeInUp {
           from {
@@ -91,7 +91,6 @@ export default function ShowcaseBanner({
       `}</style>
 
       {/* Hero Banner Section */}
-
       <section
         ref={heroRef}
         className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden"
@@ -103,7 +102,6 @@ export default function ShowcaseBanner({
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/40 to-black/60"></div>
-
         <div
           className={`relative z-10 text-center text-white px-4 transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
@@ -119,8 +117,9 @@ export default function ShowcaseBanner({
         </div>
       </section>
 
+      {/* Main Content Section */}
       <section className="py-16 md:py-24 px-4 md:px-8 bg-green-50">
-        <div className="max-w-6xl mx-auto space-y-16 md:space-y-24">
+        <div className="space-y-16 md:space-y-24">
           {blockTitles.map((title, index) => (
             <div
               key={index}
@@ -149,7 +148,6 @@ export default function ShowcaseBanner({
                   </div>
                 </div>
 
-                {/* Content Container */}
                 <div className="w-full lg:w-1/2 space-y-6">
                   <div className="space-y-4 ml-8">
                     <div className="flex items-center gap-3">
@@ -171,7 +169,6 @@ export default function ShowcaseBanner({
                     </p>
                   </div>
 
-                  {/* Decorative Elements */}
                   <div className="flex items-center gap-2 pt-4">
                     <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
                     <div className="w-2 h-2 bg-purple-500 rounded-full animate-pulse delay-100"></div>
@@ -183,6 +180,7 @@ export default function ShowcaseBanner({
           ))}
         </div>
       </section>
+
       <section
         ref={footerRef}
         className="relative py-24 md:py-32 flex items-center justify-center overflow-hidden"
@@ -193,13 +191,10 @@ export default function ShowcaseBanner({
           backgroundRepeat: "no-repeat",
         }}
       >
-        {/* Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/50 to-black/70"></div>
 
-        {/* Footer Content */}
         <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto animate-fade-in-up">
           <div className="space-y-8">
-            {/* Decorative Line */}
             <div className="flex items-center justify-center gap-4">
               <div className="h-px bg-gradient-to-r from-transparent via-white to-transparent w-24"></div>
               <div className="w-3 h-3 bg-white rounded-full"></div>
@@ -214,12 +209,10 @@ export default function ShowcaseBanner({
               {t("thanks_subheading")}
             </p>
 
-            {/* Thank You Text */}
             <p className="text-lg md:text-xl text-white/80 pt-2">
               {t("thanks_message")}
             </p>
 
-            {/* Back to Homepage Button */}
             <div className="pt-6">
               <a
                 href="/"
@@ -229,32 +222,19 @@ export default function ShowcaseBanner({
               </a>
             </div>
 
-            {/* Decorative Icons */}
             <div className="flex justify-center gap-6 pt-10">
               <div className="w-12 h-12 border-2 border-white rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-all duration-300 cursor-pointer">
-                <svg
-                  className="w-6 h-6"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
+                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 2L2 7v10c0 5.55 3.84 9.739 9 11 5.16-1.261 9-5.45 9-11V7l-10-5z" />
                 </svg>
               </div>
               <div className="w-12 h-12 border-2 border-white rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-all duration-300 cursor-pointer">
-                <svg
-                  className="w-6 h-6"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
+                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
                 </svg>
               </div>
               <div className="w-12 h-12 border-2 border-white rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-all duration-300 cursor-pointer">
-                <svg
-                  className="w-6 h-6"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
+                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                 </svg>
               </div>
