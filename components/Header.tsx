@@ -1,5 +1,7 @@
 "use client"
 import { useLanguage } from "./LanguageProvider."
+import SpeakText from "@/components/SpeakText";
+
 function Header() {
   const { language, setLanguage, t } = useLanguage()
 
@@ -17,7 +19,9 @@ function Header() {
       {/* Joined seamless text effect with staggered animations */}
       <div className="absolute inset-0 items-center flex flex-col justify-center bottom-[10%]">
         <div className="text-white mb-4 text-base sm:text-lg md:text-xl text-[19px] animate-fade-in-up animation-delay-300">
-          <p>{t("mini-desc")}</p>
+          <p>{t("mini-desc")}
+              <SpeakText textKey="mini-desc"/>
+              </p>
         </div>
         <div className="relative flex">
           {/* Left (transparent text on blur side) */}

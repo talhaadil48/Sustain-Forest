@@ -114,7 +114,7 @@ export default function Accordion() {
       <div className={`relative z-10 px-6 py-16 max-w-5xl text-center mx-auto text-white mb-9 ${
         isVisible ? "animate-fade-in-up" : "opacity-0"
       }`}>
-        <h1 className="text-5xl sm:text-4xl text-center font-bold mb-6 text-green-100">About Us</h1>
+        <h1 className="text-5xl sm:text-4xl text-center font-bold mb-6 text-green-100">{t("about_h")}</h1>
         <p className={`text-base sm:text-lg leading-relaxed mb-4 drop-shadow-md ${
           isVisible ? "animate-fade-in-up animation-delay-300" : "opacity-0"
         }`}>{t("about_p1")}</p>
