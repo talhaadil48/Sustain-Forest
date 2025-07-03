@@ -3,6 +3,7 @@ import "./globals.css";
 import { LanguageProvider } from "@/components/LanguageProvider.";
 import LayoutWrapper from "@/components/LayoutWrapper";
 import PerfectLoader from "@/components/PerfectLoader";
+
 // ✅ Move viewport to its own export
 export const viewport: Viewport = {
   width: "device-width",
@@ -25,7 +26,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body className="relative">
+      <div className="page-background" aria-hidden="true" />
         <LanguageProvider>
           <LayoutWrapper>
             <PerfectLoader>

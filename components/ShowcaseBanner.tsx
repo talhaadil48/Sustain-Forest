@@ -35,22 +35,18 @@ export default function ShowcaseBanner({
       { threshold: 0.1 }
     );
 
-    // Observe hero section
     if (heroRef.current) {
       observer.observe(heroRef.current);
     }
 
-    // Observe content blocks
     blocksRef.current.forEach((block) => {
       if (block) observer.observe(block);
     });
 
-    // Observe footer
     if (footerRef.current) {
       observer.observe(footerRef.current);
     }
 
-    // Initial hero animation
     setTimeout(() => setIsVisible(true), 100);
 
     return () => observer.disconnect();
@@ -64,7 +60,6 @@ export default function ShowcaseBanner({
 
   return (
     <div className="w-full max-w-7xl mx-auto">
-      {/* Custom CSS for animations */}
       <style jsx>{`
         @keyframes fadeInUp {
           from {
@@ -77,27 +72,8 @@ export default function ShowcaseBanner({
           }
         }
 
-        @keyframes fadeIn {
-          from {
-            opacity: 0;
-          }
-          to {
-            opacity: 1;
-          }
-        }
-
         .animate-fade-in-up {
           animation: fadeInUp 0.8s ease-out forwards;
-        }
-
-        .animate-fade-in {
-          animation: fadeIn 1s ease-out forwards;
-        }
-
-        .glass-effect {
-          background: rgba(255, 255, 255, 0.1);
-          backdrop-filter: blur(10px);
-          border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .parallax-bg {
@@ -115,9 +91,10 @@ export default function ShowcaseBanner({
       `}</style>
 
       {/* Hero Banner Section */}
+
       <section
         ref={heroRef}
-        className=" relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden"
+        className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden"
         style={{
           backgroundImage: `url('/images/bg-eco.webp?height=800&width=1200')`,
           backgroundSize: "cover",
@@ -125,10 +102,8 @@ export default function ShowcaseBanner({
           backgroundRepeat: "no-repeat",
         }}
       >
-        {/* Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/40 to-black/60"></div>
 
-        {/* Hero Content */}
         <div
           className={`relative z-10 text-center text-white px-4 transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
@@ -144,8 +119,7 @@ export default function ShowcaseBanner({
         </div>
       </section>
 
-      {/* Main Content Section */}
-      <section className=" py-16 md:py-24 px-4 md:px-8 bg-green-50">
+      <section className="py-16 md:py-24 px-4 md:px-8 bg-green-50">
         <div className="max-w-6xl mx-auto space-y-16 md:space-y-24">
           {blockTitles.map((title, index) => (
             <div
@@ -153,24 +127,18 @@ export default function ShowcaseBanner({
               ref={(el) => {
                 if (el) blocksRef.current[index] = el;
               }}
-              className={`opacity-0 transform translate-y-8 transition-all duration-800 delay-${
-                index * 200
-              }`}
+              className="opacity-0 transform translate-y-8 transition-all duration-800"
             >
               <div
                 className={`flex flex-col ${
                   index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
                 } items-center gap-8 lg:gap-16`}
               >
-                {/* Image Container */}
                 <div className="w-full lg:w-1/2">
                   <div className="relative group overflow-hidden rounded-2xl shadow-2xl">
                     <div className="aspect-[4/3] relative">
                       <Image
-                        src={
-                          images[index] ||
-                          `/placeholder.svg?height=400&width=600`
-                        }
+                        src={images[index] || `/placeholder.svg?height=400&width=600`}
                         alt={`${title} illustration`}
                         fill
                         className="object-cover transition-transform duration-700 group-hover:scale-110"
@@ -196,7 +164,7 @@ export default function ShowcaseBanner({
                     </h2>
                   </div>
 
-                  <div className="glass-effect rounded-xl p-6 md:p-8 shadow-lg">
+                  <div className="bg-white rounded-xl p-6 md:p-8 shadow-lg">
                     <p className="text-gray-700 text-lg md:text-xl leading-relaxed">
                       {descriptions[index] ||
                         `Discover the fascinating details about ${title.toLowerCase()} and how it shapes our approach to innovation and sustainability.`}
