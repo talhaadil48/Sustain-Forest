@@ -3,7 +3,7 @@ import { useLanguage } from "./LanguageProvider."
 export default function Footer() {
     const { language, setLanguage, t } = useLanguage()
     return (
-      <footer className="relative py-6 px-4 text-white overflow-hidden">
+      <footer className="relative py-6 px-4 bg-gray-700 text-white overflow-hidden">
         {/* Overlay + Blur */}
         <div className="absolute inset-0 bg-black/60 dark:bg-black/60 backdrop-blur-md z-0" />
   

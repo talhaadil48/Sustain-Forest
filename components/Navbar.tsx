@@ -13,7 +13,7 @@ export default function Navbar() {
       <div className='flex gap-3'>
       <img src="/nedlogo.png" alt="Logo" className="h-12 w-auto" />
         <LanguageSwitcher />
-      </div>
+      </div>z
     </nav>
   );
 }

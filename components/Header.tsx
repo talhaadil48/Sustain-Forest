@@ -21,6 +21,7 @@ function Header() {
         <div className="text-white mb-4 text-base sm:text-lg md:text-xl text-[19px] animate-fade-in-up animation-delay-300">
           <p>{t("mini-desc")}
               </p>
+              <SpeakText textKey="mini-desc"/>
              
         </div>
         <div className="relative flex">
