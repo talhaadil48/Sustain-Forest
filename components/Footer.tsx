@@ -1,4 +1,5 @@
 "use client"
+import { Mail, PhoneCall, MapPin } from "lucide-react"
 import { useLanguage } from "./LanguageProvider."
 export default function Footer() {
     const { language, setLanguage, t } = useLanguage()
@@ -23,25 +24,18 @@ export default function Footer() {
   
           {/* Right Section: Contact Info */}
           <div className="text-center md:text-right text-sm space-y-1">
-            <p>
-              📧{" "}
-              <a
-                href="mailto:ecocentric@example.com"
-                className="hover:text-green-400 transition-colors"
-              >
-                ecocentric@example.com
-              </a>
-            </p>
-            <p>
-              📞{" "}
-              <a
-                href="tel:+921234567890"
-                className="hover:text-green-400 transition-colors"
-              >
-                +92 123 4567890
-              </a>
-            </p>
-            <p>📍 NED University, Karachi</p>
+            <div className="flex space-x-2 items-center">
+            <Mail className="h-5 w-5" />
+            <p className="text-md mb-2">ecocentric@example.com</p>
+          </div>
+          <div className="flex space-x-2 items-center">
+            <PhoneCall className="h-5 w-5" />
+            <p className="text-md mb-2">+92 3001010101</p>
+          </div>
+          <div className="flex space-x-2 items-center">
+            <MapPin className="h-5 w-5" />
+            <p className="text-md mb-2">NED University, Karachi</p>
+          </div>
           </div>
         </div>
       </footer>
