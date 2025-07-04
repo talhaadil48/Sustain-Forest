@@ -21,7 +21,7 @@ function Header() {
         <div className="text-white mb-4 text-base sm:text-lg md:text-xl text-[19px] animate-fade-in-up animation-delay-300">
           <div className="flex gap-3">
           <p>{t("mini-desc")}</p>
-              <SpeakText textKey="mini-desc"/>
+             
           </div>
           
              

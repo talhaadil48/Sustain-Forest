@@ -1,68 +1,51 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import { useLanguage } from "./LanguageProvider.";
+import { useEffect, useState } from "react";
 import { Volume2, Square } from "lucide-react";
+import AudioManager from "@/lib/AudioManager";
+import { useLanguage } from "./LanguageProvider."; // adjust path
 
 export default function SpeakText({ textKey }: { textKey: string }) {
   const { language, t } = useLanguage();
-  const audioRef = useRef<HTMLAudioElement | null>(null);
   const [isSpeaking, setIsSpeaking] = useState(false);
+  const keys = textKey.split("|");
+  textKey = keys.map((key) => t(key)).join(" ");
 
   const speak = async () => {
     if (isSpeaking) return;
-
     setIsSpeaking(true);
-    const text = textKey
-  .split("|")
-  .map((key) => t(key))
-  .join(" ");
 
+    const text = t(textKey);
 
     try {
-      const res = await fetch(
-        "https://translate-server-rust.vercel.app/translate",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ text, lang: language === "ur" ? "ur" : "en" }),
-        }
-      );
+      const res = await fetch("https://translate-server-rust.vercel.app/translate", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ text, lang: language === "ur" ? "ur" : "en" }),
+      });
 
       const blob = await res.blob();
       const url = URL.createObjectURL(blob);
+      const audio = new Audio(url);
+      audio.playbackRate = 1.5;
 
-      if (audioRef.current) {
-        audioRef.current.pause();
-        audioRef.current.src = url;
-      } else {
-        audioRef.current = new Audio(url);
-      }
-
-      audioRef.current.playbackRate = 1.5;
-      audioRef.current.onended = () => setIsSpeaking(false);
-      audioRef.current.play();
-    } catch (err) {
-      console.error("TTS error:", err);
+      AudioManager.play(audio, () => setIsSpeaking(false));
+    } catch (error) {
+      console.error("TTS error:", error);
       setIsSpeaking(false);
     }
   };
 
   const stop = () => {
-    if (audioRef.current) {
-      audioRef.current.pause();
-      audioRef.current.currentTime = 0;
-    }
-    setIsSpeaking(false);
+    AudioManager.stop();
   };
 
   useEffect(() => {
     stop();
   }, [textKey, language]);
+
   return (
-    <div className="inline-flex items-center gap-1 ">
+    <div className="inline-flex items-center gap-1">
       {!isSpeaking ? (
         <button
           onClick={speak}
