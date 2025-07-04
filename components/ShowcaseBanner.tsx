@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { useLanguage } from "./LanguageProvider.";
+import SpeakText from "./SpeakText";
 
 interface ShowcaseBannerProps {
   descriptions: string[];
@@ -113,6 +114,9 @@ export default function ShowcaseBanner({
           <p className="text-lg md:text-xl lg:text-2xl max-w-2xl mx-auto opacity-90 leading-relaxed">
             {titleDesription}
           </p>
+          <div>
+            <SpeakText textKey={titleDesription}/>
+          </div>
           <div className="mt-8 w-24 h-1 bg-white mx-auto rounded-full"></div>
         </div>
       </section>
@@ -167,6 +171,10 @@ export default function ShowcaseBanner({
                       {descriptions[index] ||
                         `Discover the fascinating details about ${title.toLowerCase()} and how it shapes our approach to innovation and sustainability.`}
                     </p>
+                    <div>
+                      <SpeakText textKey={descriptions[index] }/>
+                    </div>
+
                   </div>
 
                   <div className="flex items-center gap-2 pt-4">

@@ -19,9 +19,11 @@ function Header() {
       {/* Joined seamless text effect with staggered animations */}
       <div className="absolute inset-0 items-center flex flex-col justify-center bottom-[10%]">
         <div className="text-white mb-4 text-base sm:text-lg md:text-xl text-[19px] animate-fade-in-up animation-delay-300">
-          <p>{t("mini-desc")}
-              </p>
+          <div className="flex gap-3">
+          <p>{t("mini-desc")}</p>
               <SpeakText textKey="mini-desc"/>
+          </div>
+          
              
         </div>
         <div className="relative flex">
@@ -38,8 +40,12 @@ function Header() {
 
       {/* Paragraph on the blurred left side with animation */}
       <div className="absolute top-[60%] left-4 sm:left-16 max-w-[90%] sm:max-w-md text-white text-sm md:text-lg lg:text-xl leading-relaxed text-center md:text-left animate-fade-in-up animation-delay-1000">
-        <p>{t("description")}</p>
-        <SpeakText textKey="description"/>
+        <div className="flex gap-3">
+          <p>{t("description")}</p>
+          <SpeakText textKey="description"/>
+        </div>
+        
+       
       </div>
     </div>
   )

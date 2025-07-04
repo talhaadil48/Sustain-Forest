@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation"
 import { useState, useEffect, useRef } from "react"
+import SpeakText from "./SpeakText"
 
 interface AccordionItem {
   id: string
@@ -124,6 +125,7 @@ export default function Accordion() {
         <p className={`text-base sm:text-lg leading-relaxed drop-shadow-md ${
           isVisible ? "animate-fade-in-up animation-delay-800" : "opacity-0"
         }`}>{t("about_p3")}</p>
+        <SpeakText textKey="about_p1|about_p2|about_p3"/>
       </div>
 
       <div className="relative z-10 w-full">

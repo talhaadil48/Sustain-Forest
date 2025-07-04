@@ -13,7 +13,11 @@ export default function SpeakText({ textKey }: { textKey: string }) {
     if (isSpeaking) return;
 
     setIsSpeaking(true);
-    const text = t(textKey);
+    const text = textKey
+  .split("|")
+  .map((key) => t(key))
+  .join(" ");
+
 
     try {
       const res = await fetch(
@@ -58,7 +62,7 @@ export default function SpeakText({ textKey }: { textKey: string }) {
     stop();
   }, [textKey, language]);
   return (
-    <div className="inline-flex items-center gap-1">
+    <div className="inline-flex items-center gap-1 ">
       {!isSpeaking ? (
         <button
           onClick={speak}
