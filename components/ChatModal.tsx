@@ -1,8 +1,8 @@
 "use client"
-
 import type React from "react"
 import { useState, useEffect, useRef } from "react"
 import { X, Send, Bot, User } from "lucide-react"
+import { VoiceInput } from "./VoiceInput"
 
 interface Message {
   id: string
@@ -38,11 +38,9 @@ export function ChatbotModal({ isOpen, onClose }: ChatbotModalProps) {
         },
         body: JSON.stringify({ message: userMessage }),
       })
-
       if (!res.ok) {
         throw new Error("Failed to fetch response from OpenAI")
       }
-
       const data = await res.json()
       return data.response || "Sorry, I couldn't understand that."
     } catch (error) {
@@ -67,16 +65,13 @@ export function ChatbotModal({ isOpen, onClose }: ChatbotModalProps) {
 
   const simulateBotResponse = async (userMessage: string) => {
     setIsTyping(true)
-
     const reply = await callOpenAI(userMessage)
-
     const botMessage: Message = {
       id: Date.now().toString(),
       text: reply,
       sender: "bot",
       timestamp: new Date(),
     }
-
     setMessages((prev) => [...prev, botMessage])
     setIsTyping(false)
   }
@@ -91,10 +86,23 @@ export function ChatbotModal({ isOpen, onClose }: ChatbotModalProps) {
       sender: "user",
       timestamp: new Date(),
     }
-
     setMessages((prev) => [...prev, userMessage])
     simulateBotResponse(inputValue)
     setInputValue("")
+  }
+
+  const handleVoiceMessage = (transcribedText: string) => {
+    console.log("Voice input received:", transcribedText)
+
+    const userMessage: Message = {
+      id: Date.now().toString(),
+      text: "Message sent via voice input",
+      sender: "user",
+      timestamp: new Date(),
+    }
+    
+    setMessages((prev) => [...prev, userMessage])
+    simulateBotResponse(transcribedText)
   }
 
   if (!isOpen) return null
@@ -187,14 +195,17 @@ export function ChatbotModal({ isOpen, onClose }: ChatbotModalProps) {
         {/* Input */}
         <div className="border-t border-gray-200 p-4">
           <form onSubmit={handleSubmit} className="flex gap-2">
-            <input
-              type="text"
-              value={inputValue}
-              onChange={(e) => setInputValue(e.target.value)}
-              placeholder="Type your message..."
-              className="flex-1 px-3 py-2 border bg-green-50 border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-green-700 focus:border-green-700 transition-colors"
-              disabled={isTyping}
-            />
+            <div className="flex-1 flex gap-2">
+              <input
+                type="text"
+                value={inputValue}
+                onChange={(e) => setInputValue(e.target.value)}
+                placeholder="Type your message..."
+                className="flex-1 px-3 py-2 border bg-green-50 border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-green-700 focus:border-green-700 transition-colors"
+                disabled={isTyping}
+              />
+              <VoiceInput onVoiceMessage={handleVoiceMessage} disabled={isTyping} />
+            </div>
             <button
               type="submit"
               disabled={!inputValue.trim() || isTyping}
