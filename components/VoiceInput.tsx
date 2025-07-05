@@ -14,53 +14,59 @@ export function VoiceInput({ onVoiceMessage, disabled = false }: VoiceInputProps
   const recognitionRef = useRef<SpeechRecognition | null>(null)
   const [showSentMessage, setShowSentMessage] = useState(false)
 
-  useEffect(() => {
-    // Check if speech recognition is supported
-    if (typeof window !== "undefined") {
-      const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition
-      setIsSupported(!!SpeechRecognition)
+useEffect(() => {
+  if (typeof window !== "undefined") {
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition
+    setIsSupported(!!SpeechRecognition)
 
-      if (SpeechRecognition) {
-        recognitionRef.current = new SpeechRecognition()
-        const recognition = recognitionRef.current
+    if (SpeechRecognition) {
+      recognitionRef.current = new SpeechRecognition()
+      const recognition = recognitionRef.current
 
-        recognition.continuous = false
-        recognition.interimResults = false
-        recognition.lang = "en-US" // Default to English, will handle both English and Urdu
+      recognition.continuous = false
+      recognition.interimResults = false
+      recognition.lang = "en-US"
 
-        recognition.onstart = () => {
-          setIsRecording(true)
-        }
+      let resultReceived = false // track if any result is received
 
-        recognition.onend = () => {
-          setIsRecording(false)
-        }
+      recognition.onstart = () => {
+        setIsRecording(true)
+        resultReceived = false
+      }
 
-        recognition.onresult = (event) => {
-          const transcript = event.results[0][0].transcript
-          const processedText = processVoiceInput(transcript)
+      recognition.onresult = (event) => {
+        resultReceived = true
+        const transcript = event.results[0][0].transcript
+        const processedText = processVoiceInput(transcript)
 
-          // Show "message sent" feedback
-          setShowSentMessage(true)
-          setTimeout(() => setShowSentMessage(false), 2000)
+        setShowSentMessage(true)
+        setTimeout(() => setShowSentMessage(false), 2000)
 
-          // Directly send the message
-          onVoiceMessage(processedText)
-        }
+        console.log(processedText)
+        onVoiceMessage(processedText)
+      }
 
-        recognition.onerror = (event) => {
-          console.error("Speech recognition error:", event.error)
-          setIsRecording(false)
+      recognition.onerror = (event) => {
+        console.error("Speech recognition error:", event.error)
+        setIsRecording(false)
+      }
+
+      recognition.onend = () => {
+        setIsRecording(false)
+        if (!resultReceived) {
+          console.warn("No speech detected or message too short")
+          // Optional: Send a fallback or retry
+          // onVoiceMessage("No speech detected.") // or show a toast instead
         }
       }
     }
+  }
 
-    return () => {
-      if (recognitionRef.current) {
-        recognitionRef.current.stop()
-      }
-    }
-  }, [onVoiceMessage])
+  return () => {
+    recognitionRef.current?.stop()
+  }
+}, [onVoiceMessage])
+
 
   const processVoiceInput = (transcript: string): string => {
     // Detect if the input contains Urdu words and convert to Roman Urdu

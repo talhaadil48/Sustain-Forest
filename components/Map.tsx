@@ -62,7 +62,7 @@ export default function ImageMap({ onSelect }: Props) {
           style={{ ...point.style, position: "absolute" }}
         >
           <MapPin className="w-3 h-3" />
-          <span>{point.label}</span>
+         
         </button>
       ))}
     </div>
