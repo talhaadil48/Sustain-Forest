@@ -6,7 +6,7 @@ export default function Footer() {
     return (
       <footer className="relative py-6 px-4 bg-[#ffc588] text-white overflow-hidden md:px-20">
         {/* Overlay + Blur */}
-        <div className="absolute inset-0 bg-black/60 dark:bg-black/60 backdrop-blur-md z-0" />
+        <div className="absolute inset-0 bg-black/50 dark:bg-black/60 backdrop-blur-md z-0" />
   
         {/* Layout Container */}
         <div className="relative z-10 max-w-7xl mx-auto w-full flex flex-col md:flex-row justify-between items-center md:items-start gap-6">
