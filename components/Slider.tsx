@@ -25,6 +25,7 @@ export default function IntegratedAccordion() {
   const accordionRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
   const { t } = useLanguage();
+  const mobileCardRefs = useRef<Record<string, HTMLDivElement | null>>({});
 
   const accordionData: AccordionItem[] = [
     {
@@ -108,34 +109,28 @@ export default function IntegratedAccordion() {
   const handleMapPointSelect = (id: string) => {
     setActiveItem(id);
 
-    // Scroll to accordion section
-    if (accordionRef.current) {
+    const isMobile = window.innerWidth < 768;
+
+    if (isMobile) {
+      const target = mobileCardRefs.current[id];
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth", block: "center" });
+
+       
+      }
+    } else if (accordionRef.current) {
       accordionRef.current.scrollIntoView({
         behavior: "smooth",
         block: "center",
       });
-    }
 
-    // Add temporary highlight effect to the selected accordion item
-    setTimeout(() => {
-      const selectedElement = document.querySelector(
-        `[data-accordion-id="${id}"]`
-      );
-      if (selectedElement) {
-        selectedElement.classList.add(
-          "ring-4",
-          "ring-red-500",
-          "ring-opacity-50"
+      setTimeout(() => {
+        const selectedElement = document.querySelector(
+          `[data-accordion-id="${id}"]`
         );
-        setTimeout(() => {
-          selectedElement.classList.remove(
-            "ring-4",
-            "ring-red-500",
-            "ring-opacity-50"
-          );
-        }, 2000);
-      }
-    }, 500);
+        // Desktop highlight logic here if needed
+      }, 500);
+    }
   };
 
   return (
@@ -261,6 +256,7 @@ export default function IntegratedAccordion() {
           <div className="md:hidden px-4 space-y-6">
             {accordionData.map((item, index) => (
               <div
+                ref={(el) => { mobileCardRefs.current[item.id] = el; }}
                 key={item.id}
                 data-accordion-id={item.id}
                 className={`relative w-full h-80 rounded-2xl overflow-hidden transform transition-all duration-700 ease-out hover:scale-[1.02] hover:shadow-2xl hover:shadow-black/30 cursor-pointer ${
