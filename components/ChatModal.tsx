@@ -2,8 +2,6 @@
 import type React from "react"
 import { useState, useEffect, useRef } from "react"
 import { X, Send, Bot, User } from "lucide-react"
-import { VoiceInput } from "./VoiceInput"
-
 interface Message {
   id: string
   text: string
@@ -36,7 +34,9 @@ export function ChatbotModal({ isOpen, onClose }: ChatbotModalProps) {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ message: userMessage }),
+        body: JSON.stringify({ message: userMessage ,
+          messages : messages
+        }),
       })
       if (!res.ok) {
         throw new Error("Failed to fetch response from OpenAI")
@@ -204,7 +204,6 @@ export function ChatbotModal({ isOpen, onClose }: ChatbotModalProps) {
                 className="flex-1 px-3 py-2 border bg-green-50 border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-green-700 focus:border-green-700 transition-colors"
                 disabled={isTyping}
               />
-              <VoiceInput onVoiceMessage={handleVoiceMessage} disabled={isTyping} />
             </div>
             <button
               type="submit"
