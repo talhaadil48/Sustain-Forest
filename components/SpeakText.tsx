@@ -1,70 +1,72 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useRef, useState } from "react";
 import { Volume2, Square } from "lucide-react";
-import AudioManager from "@/lib/AudioManager";
-import { useLanguage } from "./LanguageProvider."; // adjust path
+import { useLanguage } from "./LanguageProvider.";
 
-export default function SpeakText({ textKey }: { textKey: string }) {
-  const { language, t } = useLanguage();
+// Global reference to currently playing audio
+let currentAudio: HTMLAudioElement | null = null;
+
+interface SpeakAudioProps {
+  file: string;
+}
+
+export default function SpeakAudio({ file }: SpeakAudioProps) {
+  const { language } = useLanguage();
+  const audioRef = useRef<HTMLAudioElement>(null);
   const [isSpeaking, setIsSpeaking] = useState(false);
-  const keys = textKey.split("|");
-  textKey = keys.map((key) => t(key)).join(" ");
 
-  const speak = async () => {
-    if (isSpeaking) return;
-    setIsSpeaking(true);
+  const handleTogglePlay = () => {
+    const audio = audioRef.current;
+    if (!audio) return;
 
-    const text = t(textKey);
+    // Stop the currently playing audio (if it's not this one)
+    if (currentAudio && currentAudio !== audio) {
+      currentAudio.pause();
+      currentAudio.currentTime = 0;
+      currentAudio.dispatchEvent(new Event("force-stop"));
+    }
 
-    try {
-      const res = await fetch("https://translate-server-rust.vercel.app/translate", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ text, lang: language === "ur" ? "ur" : "en" }),
-      });
-
-      const blob = await res.blob();
-      const url = URL.createObjectURL(blob);
-      const audio = new Audio(url);
-      audio.playbackRate = 1.5;
-
-      AudioManager.play(audio, () => setIsSpeaking(false));
-    } catch (error) {
-      console.error("TTS error:", error);
+    if (isSpeaking) {
+      audio.pause();
+      audio.currentTime = 0;
       setIsSpeaking(false);
+      currentAudio = null;
+    } else {
+      audio.playbackRate = 1.5;
+      audio.play();
+      setIsSpeaking(true);
+      currentAudio = audio;
+
+      // Reset state when audio ends
+      audio.onended = () => {
+        setIsSpeaking(false);
+        currentAudio = null;
+      };
+
+      // Handle forced stop from other component
+      const stopHandler = () => {
+        setIsSpeaking(false);
+      };
+      audio.addEventListener("force-stop", stopHandler);
+
+      // Cleanup listener when unmounted
+      return () => {
+        audio.removeEventListener("force-stop", stopHandler);
+      };
     }
   };
 
-  const stop = () => {
-    AudioManager.stop();
-  };
-
-  useEffect(() => {
-    stop();
-  }, [textKey, language]);
-
   return (
-    <div className="inline-flex items-center gap-1">
-      {!isSpeaking ? (
-        <button
-          onClick={speak}
-          title="Speak"
-          aria-label="Speak"
-          className="p-1 rounded"
-        >
-          <Volume2 size={22} />
-        </button>
-      ) : (
-        <button
-          onClick={stop}
-          title="Stop"
-          aria-label="Stop"
-          className="p-1 rounded"
-        >
-          <Square size={20} />
-        </button>
-      )}
+    <div className="flex items-center gap-2 cursor-pointer">
+      <audio
+        ref={audioRef}
+        src={`/voice/${language}/${file}.mp3`}
+        preload="auto"
+      />
+      <button onClick={handleTogglePlay}>
+        {isSpeaking ? <Square size={24} /> : <Volume2 size={24} />}
+      </button>
     </div>
   );
 }

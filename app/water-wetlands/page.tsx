@@ -19,6 +19,14 @@ export default function WaterWetlandPage() {
           t("water_wetland_descriptions_1"),
           t("water_wetland_descriptions_2"),
         ]}
+
+        audios={
+          [
+            "water_wetland_descriptions_0",
+            "water_wetland_descriptions_1",
+            "water_wetland_descriptions_2",
+          ]
+        }
       />
     </main>
   );

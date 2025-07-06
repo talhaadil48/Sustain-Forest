@@ -10,6 +10,7 @@ interface ShowcaseBannerProps {
   images: string[];
   title: string;
   titleDesription: string;
+  audios : string[]
 }
 
 export default function ShowcaseBanner({
@@ -17,6 +18,7 @@ export default function ShowcaseBanner({
   images,
   title,
   titleDesription,
+  audios
 }: ShowcaseBannerProps) {
   const [isVisible, setIsVisible] = useState(false);
   const heroRef = useRef<HTMLDivElement>(null);
@@ -114,9 +116,7 @@ export default function ShowcaseBanner({
           <p className="text-lg md:text-xl lg:text-2xl max-w-2xl mx-auto opacity-90 leading-relaxed">
             {titleDesription}
           </p>
-          <div>
-            <SpeakText textKey={titleDesription}/>
-          </div>
+          
           <div className="mt-8 w-24 h-1 bg-white mx-auto rounded-full"></div>
         </div>
       </section>
@@ -172,7 +172,7 @@ export default function ShowcaseBanner({
                         `Discover the fascinating details about ${title.toLowerCase()} and how it shapes our approach to innovation and sustainability.`}
                     </p>
                     <div>
-                      <SpeakText textKey={descriptions[index] }/>
+                      <SpeakText file={audios[index] }/>
                     </div>
 
                   </div>

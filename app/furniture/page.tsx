@@ -19,6 +19,13 @@ export default function UpcycledFurniturePage() {
           t("upcycled_furniture_descriptions_1"),
           t("upcycled_furniture_descriptions_2"),
         ]}
+        audios={
+          [
+            "upcycled_furniture_descriptions_0",
+            "upcycled_furniture_descriptions_1",
+            "upcycled_furniture_descriptions_2",
+          ]
+        }
       />
     </main>
   );

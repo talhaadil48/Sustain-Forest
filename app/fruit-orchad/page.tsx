@@ -7,6 +7,7 @@ export default function FruitOrchardPage() {
   return (
     <main>
       <ShowcaseBanner
+      
         title={t("fruit_orchard_title")}
         titleDesription={t("fruit_orchard_titleDescription")}
         images={[
@@ -19,6 +20,14 @@ export default function FruitOrchardPage() {
           t("fruit_orchard_descriptions_1"),
           t("fruit_orchard_descriptions_2"),
         ]}
+        audios= {
+          [
+            "fruit_orchard_descriptions_0",
+            "fruit_orchard_descriptions_1",
+            "fruit_orchard_descriptions_2",
+          ]
+        
+        }
       />
     </main>
   );

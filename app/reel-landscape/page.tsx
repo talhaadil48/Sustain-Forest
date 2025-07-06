@@ -19,6 +19,13 @@ export default function ReelLandscapePage() {
           t("reel_landscape_descriptions_1"),
           t("reel_landscape_descriptions_2"),
         ]}
+        audios={
+          [
+            "reel_landscape_descriptions_0",
+            "reel_landscape_descriptions_1",
+            "reel_landscape_descriptions_2",
+          ]
+        }
       />
     </main>
   );

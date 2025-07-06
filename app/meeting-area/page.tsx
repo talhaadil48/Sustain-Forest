@@ -19,6 +19,13 @@ export default function MeetingAreaPage() {
           t("meeting_area_descriptions_1"),
           t("meeting_area_descriptions_2"),
         ]}
+        audios={
+          [
+            "meeting_area_descriptions_0",
+            "meeting_area_descriptions_1",
+            "meeting_area_descriptions_2",
+          ]
+        }
       />
     </main>
   );

@@ -3,8 +3,8 @@
 import { useRouter } from "next/navigation";
 import { useState, useEffect, useRef } from "react";
 import ImageMap from "./Map";
-import SpeakText from "./SpeakText";
 import { useLanguage } from "./LanguageProvider.";
+import SpeakAudio from "./SpeakText";
 
 interface AccordionItem {
   id: string;
@@ -177,7 +177,7 @@ export default function IntegratedAccordion() {
           >
             {t("about_p3")}
           </p>
-          <SpeakText textKey="about_p1|about_p2|about_p3" />
+          <SpeakAudio file="about_combined"/>
         </div>
         <ImageMap onSelect={handleMapPointSelect} />
 

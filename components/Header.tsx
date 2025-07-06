@@ -1,9 +1,11 @@
 "use client"
+import SpeakAudio from "@/components/SpeakText";
 import { useLanguage } from "./LanguageProvider."
 import SpeakText from "@/components/SpeakText";
 
 function Header() {
   const { language, setLanguage, t } = useLanguage()
+  console.log("Header language:", language)
 
   return (
     <div
@@ -39,10 +41,11 @@ function Header() {
       </div>
 
       {/* Paragraph on the blurred left side with animation */}
+     {/* Paragraph on the blurred left side with animation */}
       <div className="absolute top-[60%] left-4 sm:left-16 max-w-[90%] sm:max-w-md text-white text-sm md:text-lg lg:text-xl leading-relaxed text-center md:text-left animate-fade-in-up animation-delay-1000">
         <div className="flex gap-3">
           <p>{t("description")}</p>
-          <SpeakText textKey="description"/>
+          <SpeakText file="description"/>
         </div>
         
        

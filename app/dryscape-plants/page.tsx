@@ -19,6 +19,13 @@ export default function DryscapePage() {
           t("dry_escape_descriptions_1"),
           t("dry_escape_descriptions_2"),
         ]}
+        audios={
+          [
+            "dry_escape_descriptions_0",
+            "dry_escape_descriptions_1",
+            "dry_escape_descriptions_2",
+          ]
+        }
       />
     </main>
   );
