@@ -177,7 +177,10 @@ export default function IntegratedAccordion() {
           >
             {t("about_p3")}
           </p>
+          <div className="flex justify-center ">
           <SpeakText file="about_combined" />
+          </div>
+          
         </div>
         <ImageMap onSelect={handleMapPointSelect} />
 
