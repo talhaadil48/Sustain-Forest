@@ -126,7 +126,7 @@ export default function Accordion() {
           isVisible ? "animate-fade-in-up animation-delay-800" : "opacity-0"
         }`}>{t("about_p3")}</p>
        <div className="flex justify-center mt-4">
-    <SpeakText textKey="about_p1|about_p2|about_p3" />
+    <SpeakText file="about_combined"/>
   </div>
       </div>
 
