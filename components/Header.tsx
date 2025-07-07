@@ -1,11 +1,11 @@
-"use client"
+"use client";
 import SpeakAudio from "@/components/SpeakText";
-import { useLanguage } from "./LanguageProvider."
+import { useLanguage } from "./LanguageProvider.";
 import SpeakText from "@/components/SpeakText";
 
 function Header() {
-  const { language, setLanguage, t } = useLanguage()
-  console.log("Header language:", language)
+  const { language, setLanguage, t } = useLanguage();
+  console.log("Header language:", language);
 
   return (
     <div
@@ -22,11 +22,8 @@ function Header() {
       <div className="absolute inset-0 items-center flex flex-col justify-center bottom-[10%]">
         <div className="text-white mb-4 text-base sm:text-lg md:text-xl text-[19px] animate-fade-in-up animation-delay-300">
           <div className="flex gap-3">
-          <p>{t("mini-desc")}</p>
-             
+            <p>{t("mini-desc")}</p>
           </div>
-          
-             
         </div>
         <div className="relative flex">
           {/* Left (transparent text on blur side) */}
@@ -41,17 +38,16 @@ function Header() {
       </div>
 
       {/* Paragraph on the blurred left side with animation */}
-     {/* Paragraph on the blurred left side with animation */}
+      {/* Paragraph on the blurred left side with animation */}
       <div className="absolute top-[60%] left-4 sm:left-16 max-w-[90%] sm:max-w-md text-white text-sm md:text-lg lg:text-xl leading-relaxed text-center md:text-left animate-fade-in-up animation-delay-1000">
-        <div className="flex gap-3">
-          <p>{t("description")}</p>
-          <SpeakText file="description"/>
+        <p>{t("description")}</p>
+
+        <div className="flex justify-center mt-3">
+          <SpeakText file="description" />
         </div>
-        
-       
       </div>
     </div>
-  )
+  );
 }
 
-export default Header
+export default Header;
