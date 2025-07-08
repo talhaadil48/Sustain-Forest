@@ -11,7 +11,7 @@ export default function Navbar() {
 
       {/* Right Section — Logo + Language Switcher aligned to right */}
       <div className="flex items-center gap-3 ml-auto">
-        <img src="/nedlogo.png" alt="NED Logo" className="h-12 w-auto" />
+        <img src="/LOGONED.png" alt="NED Logo" className="h-12 w-auto" />
         <LanguageSwitcher />
       </div>
     </nav>
