@@ -1,7 +1,6 @@
 "use client"
 
 import type React from "react"
-
 import { useState } from "react"
 import { X } from "lucide-react"
 
@@ -13,7 +12,7 @@ interface UserInfoData {
 
 interface UserInfoModalProps {
   onClose: () => void
-  onSubmit: (data: UserInfoData) => void
+  onSubmit: (data: UserInfoData) => Promise<void> | void  // Support async submission
 }
 
 export default function UserInfoModal({ onClose, onSubmit }: UserInfoModalProps) {
@@ -23,22 +22,28 @@ export default function UserInfoModal({ onClose, onSubmit }: UserInfoModalProps)
     qualification: "",
   })
 
+  const [isSubmitting, setIsSubmitting] = useState(false) // ⬅️ New state
+
   const handleBackdropClick = (e: React.MouseEvent) => {
     if (e.target === e.currentTarget) {
       onClose()
     }
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
 
-    // Validate all fields are filled
     if (!formData.name.trim() || !formData.gender || !formData.qualification) {
       alert("Please fill in all required fields.")
       return
     }
 
-    onSubmit(formData)
+    try {
+      setIsSubmitting(true) // ⬅️ Set submitting
+      await Promise.resolve(onSubmit(formData)) // ⬅️ Await if onSubmit is async
+    } finally {
+      setIsSubmitting(false) // ⬅️ Reset submitting
+    }
   }
 
   const isFormValid = formData.name.trim() && formData.gender && formData.qualification
@@ -56,6 +61,7 @@ export default function UserInfoModal({ onClose, onSubmit }: UserInfoModalProps)
             onClick={onClose}
             className="text-gray-400 hover:text-gray-600 transition-colors p-1 rounded-full hover:bg-gray-100"
             aria-label="Close modal"
+            disabled={isSubmitting} // ⬅️ Optional: disable close while submitting
           >
             <X className="w-6 h-6" />
           </button>
@@ -76,6 +82,7 @@ export default function UserInfoModal({ onClose, onSubmit }: UserInfoModalProps)
               onChange={(e) => setFormData((prev) => ({ ...prev, name: e.target.value }))}
               className="w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-gray-500 focus:border-gray-500 transition-colors"
               required
+              disabled={isSubmitting} // ⬅️ Optional
             />
           </div>
 
@@ -90,6 +97,7 @@ export default function UserInfoModal({ onClose, onSubmit }: UserInfoModalProps)
               onChange={(e) => setFormData((prev) => ({ ...prev, gender: e.target.value }))}
               className="w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-gray-500 focus:border-gray-500 transition-colors"
               required
+              disabled={isSubmitting} // ⬅️ Optional
             >
               <option value="">Select your gender</option>
               <option value="male">Male</option>
@@ -108,6 +116,7 @@ export default function UserInfoModal({ onClose, onSubmit }: UserInfoModalProps)
               onChange={(e) => setFormData((prev) => ({ ...prev, qualification: e.target.value }))}
               className="w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-gray-500 focus:border-gray-500 transition-colors"
               required
+              disabled={isSubmitting} // ⬅️ Optional
             >
               <option value="">Select your qualification</option>
               <option value="school">School</option>
@@ -121,10 +130,10 @@ export default function UserInfoModal({ onClose, onSubmit }: UserInfoModalProps)
           <div className="pt-4">
             <button
               type="submit"
-              disabled={!isFormValid}
+              disabled={!isFormValid || isSubmitting} // ⬅️ Add isSubmitting
               className="w-full bg-gray-800 hover:bg-gray-900 disabled:bg-gray-400 disabled:cursor-not-allowed text-white py-3 rounded-lg font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
             >
-              Submit Information
+              {isSubmitting ? "Submitting..." : "Submit Information"} {/* ⬅️ Button text */}
             </button>
           </div>
         </form>
