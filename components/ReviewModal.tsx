@@ -10,7 +10,6 @@ interface ReviewModalProps {
 }
 
 export function ReviewModal({ isOpen, onClose }: ReviewModalProps) {
-  const [name, setName] = useState("");
   const [review, setReview] = useState("");
   const [rating, setRating] = useState(0);
   const [hoveredStar, setHoveredStar] = useState(0);
@@ -18,7 +17,6 @@ export function ReviewModal({ isOpen, onClose }: ReviewModalProps) {
 
   useEffect(() => {
     if (!isOpen) {
-      setName("");
       setReview("");
       setRating(0);
       setHoveredStar(0);
@@ -35,7 +33,7 @@ export function ReviewModal({ isOpen, onClose }: ReviewModalProps) {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (name.trim() && rating > 0) {
+    if (rating > 0) {
       setIsSubmitting(true); // Start loading
       const guestId = localStorage.getItem("guest_id");
 
@@ -46,7 +44,6 @@ export function ReviewModal({ isOpen, onClose }: ReviewModalProps) {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            username: name,
             content: review,
             star: rating,
             userid: guestId,
@@ -64,7 +61,7 @@ export function ReviewModal({ isOpen, onClose }: ReviewModalProps) {
     }
   };
 
-  const isFormValid = name.trim().length > 0 && rating > 0;
+  const isFormValid = rating > 0;
 
   if (!isOpen) return null;
 
@@ -88,23 +85,6 @@ export function ReviewModal({ isOpen, onClose }: ReviewModalProps) {
 
         {/* Form */}
         <form onSubmit={handleSubmit} className="p-6 space-y-6">
-          <div>
-            <label
-              htmlFor="name"
-              className="block text-sm font-medium text-gray-700 mb-2"
-            >
-              Your Name *
-            </label>
-            <input
-              id="name"
-              type="text"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              placeholder="Enter your name"
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-green-500 transition-colors"
-              required
-            />
-          </div>
 
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">

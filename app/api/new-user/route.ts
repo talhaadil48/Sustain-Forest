@@ -1,18 +1,21 @@
 import { NextResponse } from 'next/server'
 import { supabase } from '@/lib/supabaseClient'
 
-export async function POST() {
+export async function POST(req: Request) {
+  const body = await req.json()
+  const { name, gender, qualification } = body
+  
+
   const { data, error } = await supabase
     .from('users')
-    .insert([{ name: 'guest' }])
+    .insert([{ name, gender, qualification }])
     .select('id')
-    .single()
+   
 
   if (error || !data) {
-    console.log(error)
-    return NextResponse.json({ error: 'Guest insert failed' }, { status: 500 })
+    console.error(error)
+    return NextResponse.json({ error: 'Insert failed' }, { status: 500 })
   }
-  console.log(data)
 
-  return NextResponse.json({ message: 'Guest inserted', id: data.id })
+  return NextResponse.json({ message: 'User inserted', id: data[0]?.id })
 }
