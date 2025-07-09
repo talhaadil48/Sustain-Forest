@@ -69,11 +69,10 @@
   "section_about_it": "What It's All About",
   "section_impact_on_environment": "Our Impact on the Environment",
 
-  "thanks_heading": "Thank You for Exploring Eco Park",
-  "thanks_subheading": "A step toward greener cities and circular futures",
-  "thanks_message": "We’re grateful for your interest in sustainability 🌿\nEvery visit, every question, and every idea shared here brings us closer to a healthier planet.",
-  "thanks_back_home": "Return to Home",
-
+  "thanks_heading": "Thank You for Exploring",
+  "thanks_subheading": "Our vision and commitment to creating a better tomorrow",
+  "thanks_message": "We appreciate your time and curiosity 🌿",
+  "thanks_back_home": "Back to Homepage",
   "footer_h": "Eco Centric",
-  "footer_p": "An Urban Forestry & Sustainability Initiative"
+  "footer_p": "Urban Forestry Initiative"
 }
