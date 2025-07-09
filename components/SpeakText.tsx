@@ -33,7 +33,7 @@ export default function SpeakAudio({ file }: SpeakAudioProps) {
       setIsSpeaking(false);
       currentAudio = null;
     } else {
-      audio.playbackRate = 1.5;
+      audio.playbackRate = 1.25;
       audio.play();
       setIsSpeaking(true);
       currentAudio = audio;
