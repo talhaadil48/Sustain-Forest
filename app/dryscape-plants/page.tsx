@@ -10,9 +10,9 @@ export default function DryscapePage() {
         title={t("dry_escape_title")}
         titleDesription={t("dry_escape_titleDescription")}
         images={[
-          "/images/agvae.webp?height=400&width=600",
-          "/images/ALOVERA.webp?height=400&width=600",
-          "/images/lemongrass.webp?height=400&width=600",
+          "/images/realagave.webp?height=400&width=600",
+          "/images/realalovera.webp?height=900&width=400",
+          "/images/reallemongrass.webp?height=400&width=600",
         ]}
         descriptions={[
           t("dry_escape_descriptions_0"),
