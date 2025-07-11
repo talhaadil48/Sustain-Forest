@@ -7,10 +7,20 @@ export default function WaterWetlandPage() {
   return (
     <main>
       <ShowcaseBanner
+        logoImages={[
+          null,
+          null,
+          null,
+          ["images/11.png", "/images/13.png", "/images/14.png","/images/15.png",
+           
+          ],
+        ]}
+
         title={t("water_wetland_title")}
         titleDesription={t("water_wetland_titleDescription")}
         images={[
           "/images/new-pic1.webp?height=400&width=600",
+          "/images/new-pic3.webp?height=400&width=600",
           "/images/new-pic3.webp?height=400&width=600",
           "/images/new-pic4.webp?height=400&width=600",
         ]}
@@ -18,6 +28,7 @@ export default function WaterWetlandPage() {
           t("water_wetland_descriptions_0"),
           t("water_wetland_descriptions_1"),
           t("water_wetland_descriptions_2"),
+          t("water_wetland_descriptions_3"),
         ]}
 
         audios={

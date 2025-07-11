@@ -7,9 +7,18 @@ export default function ReelLandscapePage() {
   return (
     <main>
       <ShowcaseBanner
+         logoImages={[
+          null,
+          null,
+          null,
+          ["images/3.png", "/images/9.png", "/images/11.png","/images/13.png",
+           
+          ],
+        ]}
         title = {t("solar_photobioreactor_title")}
         titleDesription={t("solar_photobioreactor_titleDescription")}
         images={[
+          "/images/new-pic8.webp?height=400&width=600",
           "/images/new-pic8.webp?height=400&width=600",
           "/images/new-pic8.webp?height=400&width=600",
           "/images/new-pic8.webp?height=400&width=600",
@@ -18,6 +27,7 @@ export default function ReelLandscapePage() {
           t("solar_photobioreactor_descriptions_0"),
           t("solar_photobioreactor_descriptions_1"),
           t("solar_photobioreactor_descriptions_2"),
+          t("solar_photobioreactor_descriptions_3"),
         ]}
         audios={
           [

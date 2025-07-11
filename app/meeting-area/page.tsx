@@ -7,9 +7,18 @@ export default function MeetingAreaPage() {
   return (
     <main>
       <ShowcaseBanner
+      logoImages={[
+          null,
+          null,
+          null,
+          ["/images/11.png",
+            "/images/12.png",
+              "/images/13.png",]
+        ]}
         title={t("meeting_area_title")}
         titleDesription={t("meeting_area_titleDescription")}
         images={[
+          "/images/Picture2.webp?height=400&width=600",
           "/images/Picture2.webp?height=400&width=600",
           "/images/Picture2.webp?height=400&width=600",
           "/images/Picture2.webp?height=400&width=600",
@@ -18,6 +27,7 @@ export default function MeetingAreaPage() {
           t("meeting_area_descriptions_0"),
           t("meeting_area_descriptions_1"),
           t("meeting_area_descriptions_2"),
+          t("meeting_area_descriptions_3"),
         ]}
         audios={
           [

@@ -10,7 +10,8 @@ interface ShowcaseBannerProps {
   images: string[];
   title: string;
   titleDesription: string;
-  audios : string[]
+  audios: string[];
+  logoImages?: (null | string[])[]; // Optional prop for logo images
 }
 
 export default function ShowcaseBanner({
@@ -18,9 +19,10 @@ export default function ShowcaseBanner({
   images,
   title,
   titleDesription,
-  audios
+  audios,
+  logoImages = [],
 }: ShowcaseBannerProps) {
-  const [isVisible, setIsVisible] = useState(false)
+  const [isVisible, setIsVisible] = useState(false);
   const heroRef = useRef<HTMLDivElement>(null);
   const blocksRef = useRef<HTMLDivElement[]>([]);
   const footerRef = useRef<HTMLDivElement>(null);
@@ -59,6 +61,7 @@ export default function ShowcaseBanner({
     t("section_how_we_made_it"),
     t("section_about_it"),
     t("section_impact_on_environment"),
+    t("linked_to_sdgs"),
   ];
 
   return (
@@ -116,7 +119,7 @@ export default function ShowcaseBanner({
           <p className="text-lg md:text-xl lg:text-2xl max-w-2xl mx-auto opacity-90 leading-relaxed">
             {titleDesription}
           </p>
-          
+
           <div className="mt-8 w-24 h-1 bg-white mx-auto rounded-full"></div>
         </div>
       </section>
@@ -124,68 +127,103 @@ export default function ShowcaseBanner({
       {/* Main Content Section */}
       <section className="py-16 md:py-24 px-4 md:px-8 bg-green-50">
         <div className="space-y-16 md:space-y-24">
-          {blockTitles.map((title, index) => (
-            <div
-              key={index}
-              ref={(el) => {
-                if (el) blocksRef.current[index] = el;
-              }}
-              className="opacity-0 transform translate-y-8 transition-all duration-800"
-            >
+          {blockTitles.map((title, index) => {
+            const isLastBlock =
+               index === blockTitles.length - 1;
+
+            return (
               <div
-                className={`flex flex-col ${
-                  index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
-                } items-center gap-8 lg:gap-16`}
+                key={index}
+                ref={(el) => {
+                  if (el) blocksRef.current[index] = el;
+                }}
+                className="opacity-0 transform translate-y-8 transition-all duration-800"
               >
-                <div className="w-full lg:w-1/2">
-                  <div className="relative group overflow-hidden rounded-2xl shadow-2xl">
-                    <div className="aspect-[4/3] relative">
-                      <Image
-                        src={images[index] || `/placeholder.svg?height=400&width=600`}
-                        alt={`${title} illustration`}
-                        fill
-                        className="object-cover transition-transform duration-700 group-hover:scale-110"
-                        sizes="(max-width: 768px) 100vw, 50vw"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    </div>
-                  </div>
-                </div>
+                <div
+                  className={`flex flex-col ${
+                    index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
+                  } items-center gap-8 lg:gap-16`}
+                >
+                  {/* Image Section */}
+                  <div className="w-full lg:w-1/2">
+                    <div className="relative group overflow-hidden rounded-2xl shadow-2xl">
+                      <div className="aspect-[4/3] relative">
+                        {/* Main Image with conditional blur */}
+                        <Image
+                          src={
+                            images[index] ||
+                            `/placeholder.svg?height=400&width=600`
+                          }
+                          alt={`${title} illustration`}
+                          fill
+                          className={`object-cover transition-transform duration-700 group-hover:scale-110 ${
+                            isLastBlock ? "blur-sm" : ""
+                          }`}
+                          sizes="(max-width: 768px) 100vw, 50vw"
+                        />
 
-                <div className="w-full lg:w-1/2 space-y-6">
-                  <div className="space-y-4 ml-8">
-                    <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
-                        {index + 1}
+                        {/* Overlay gradient */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+                        {/* Overlay logos if it's the last block */}
+                        {isLastBlock && Array.isArray(logoImages?.[index]) && (logoImages[index] ?? []).length > 0 && (
+                          <div className="absolute inset-0 flex flex-wrap justify-center items-center gap-4 p-4">
+                            {(logoImages[index] ?? []).map(
+                              (logoSrc: string, logoIdx: number) => (
+                                <div
+                                  key={logoIdx}
+                                  className="w-28 h-28 relative"
+                                >
+                                  <Image
+                                    src={logoSrc}
+                                    alt={`Logo ${logoIdx + 1}`}
+                                    fill
+                                    className="object-contain"
+                                  />
+                                </div>
+                              )
+                            )}
+                          </div>
+                        )}
                       </div>
-                      <div className="h-px bg-gradient-to-r from-blue-500 to-purple-600 flex-1"></div>
                     </div>
-
-                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
-                      {title}
-                    </h2>
                   </div>
 
-                  <div className="bg-white rounded-xl p-6 md:p-8 shadow-lg">
-                    <p className="text-gray-700 text-lg md:text-xl leading-relaxed">
-                      {descriptions[index] ||
-                        `Discover the fascinating details about ${title.toLowerCase()} and how it shapes our approach to innovation and sustainability.`}
-                    </p>
-                    <div>
-                      <SpeakText file={audios[index] }/>
+                  {/* Text Section */}
+                  <div className="w-full lg:w-1/2 space-y-6">
+                    <div className="space-y-4 ml-8">
+                      <div className="flex items-center gap-3">
+                        <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                          {index + 1}
+                        </div>
+                        <div className="h-px bg-gradient-to-r from-blue-500 to-purple-600 flex-1"></div>
+                      </div>
+
+                      <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+                        {title}
+                      </h2>
                     </div>
 
-                  </div>
+                    <div className="bg-white rounded-xl p-6 md:p-8 shadow-lg">
+                      <p className="text-gray-700 text-lg md:text-xl leading-relaxed">
+                        {descriptions[index] ||
+                          `Discover the fascinating details about ${title.toLowerCase()} and how it shapes our approach to innovation and sustainability.`}
+                      </p>
+                      <div>
+                        <SpeakText file={audios[index]} />
+                      </div>
+                    </div>
 
-                  <div className="flex items-center gap-2 pt-4">
-                    <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
-                    <div className="w-2 h-2 bg-purple-500 rounded-full animate-pulse delay-100"></div>
-                    <div className="w-2 h-2 bg-pink-500 rounded-full animate-pulse delay-200"></div>
+                    <div className="flex items-center gap-2 pt-4">
+                      <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
+                      <div className="w-2 h-2 bg-purple-500 rounded-full animate-pulse delay-100"></div>
+                      <div className="w-2 h-2 bg-pink-500 rounded-full animate-pulse delay-200"></div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </section>
 
@@ -208,19 +246,15 @@ export default function ShowcaseBanner({
               <div className="w-3 h-3 bg-white rounded-full"></div>
               <div className="h-px bg-gradient-to-r from-transparent via-white to-transparent w-24"></div>
             </div>
-
             <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
               {t("thanks_heading")}
             </h3>
-
             <p className="text-xl md:text-2xl opacity-90 leading-relaxed">
               {t("thanks_subheading")}
             </p>
-
             <p className="text-lg md:text-xl text-white/80 pt-2">
               {t("thanks_message")}
             </p>
-
             <div className="pt-6">
               <a
                 href="/"
@@ -229,7 +263,7 @@ export default function ShowcaseBanner({
                 {t("thanks_back_home")}
               </a>
             </div>
-l
+            l
           </div>
         </div>
       </section>

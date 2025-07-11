@@ -7,17 +7,27 @@ export default function UpcycledFurniturePage() {
   return (
     <main>
       <ShowcaseBanner
+         logoImages={[
+          null,
+          null,
+          null,
+          ["/images/11.png",
+            "/images/12.png",
+              "/images/13.png",]
+        ]}
         title={t("upcycled_furniture_title")}
         titleDesription={t("upcycled_furniture_titleDescription")}
         images={[
           "/images/new-pic6.webp?height=400&width=600",
           "/images/Picture10.webp?height=400&width=600",
           "/images/pic3.webp?height=400&width=600",
+          "/images/Picture10.webp?height=400&width=600",
         ]}
         descriptions={[
           t("upcycled_furniture_descriptions_0"),
           t("upcycled_furniture_descriptions_1"),
           t("upcycled_furniture_descriptions_2"),
+          t("upcycled_furniture_descriptions_3"),
         ]}
         audios={
           [
