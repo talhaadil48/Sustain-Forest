@@ -20,7 +20,7 @@ export default function UpcycledFurniturePage() {
         images={[
           "/images/new-pic6.webp?height=400&width=600",
           "/images/Picture10.webp?height=400&width=600",
-          "/images/pic3.webp?height=400&width=600",
+          "/images/new-pic13.webp?height=400&width=600",
           "/images/Picture10.webp?height=400&width=600",
         ]}
         descriptions={[
