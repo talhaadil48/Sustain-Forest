@@ -80,8 +80,8 @@ export default function Footer() {
               Our Creative Team
             </h3>
 
-            <p className="text-sm font-medium text-gray-800 mb-1">Concept & Development: <span className="font-normal">Atif Mustafa</span></p>
-            <p className="text-sm font-medium text-gray-800 mb-1">Web Team: <span className="font-normal">Majida Kazmi</span></p>
+            <p className="text-sm font-medium text-gray-800 mb-1">Concept & Development: <span className="font-normal">Dr. Atif Mustafa</span></p>
+            <p className="text-sm font-medium text-gray-800 mb-1">Web Team: <span className="font-normal">Dr. Majida Kazmi</span></p>
 
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-4 gap-y-1 text-xs text-gray-500">
               {[
