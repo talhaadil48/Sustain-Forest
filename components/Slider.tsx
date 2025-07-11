@@ -70,6 +70,13 @@ export default function IntegratedAccordion() {
       description: t("accordion_item_6_description"),
       link: "/reel-landscape",
     },
+    {
+      id :"7",
+      backgroundImage : "/images/new-pic8.webp",
+      name : t("solar_photobioreactor_title"),
+      description : t("solar_photobioreactor_titleDescription"),
+      link : "/solar-photobioreactor"
+    }
   ];
 
   useEffect(() => {
