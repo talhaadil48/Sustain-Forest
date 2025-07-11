@@ -33,6 +33,7 @@ export default function DryscapePage() {
             "dry_escape_descriptions_0",
             "dry_escape_descriptions_1",
             "dry_escape_descriptions_2",
+            "dry_escape_descriptions_3",
           ]
         }
       />

@@ -31,9 +31,10 @@ export default function ReelLandscapePage() {
         ]}
         audios={
           [
-            "reel_landscape_descriptions_0",
-            "reel_landscape_descriptions_1",
-            "reel_landscape_descriptions_2",
+            "solar_photobioreactor_descriptions_0",
+          "solar_photobioreactor_descriptions_1",
+          "solar_photobioreactor_descriptions_2",
+          "solar_photobioreactor_descriptions_3",
           ]
         }
       />

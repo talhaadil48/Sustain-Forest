@@ -34,6 +34,7 @@ export default function UpcycledFurniturePage() {
             "upcycled_furniture_descriptions_0",
             "upcycled_furniture_descriptions_1",
             "upcycled_furniture_descriptions_2",
+            "upcycled_furniture_descriptions_3",
           ]
         }
       />

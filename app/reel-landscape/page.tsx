@@ -33,6 +33,7 @@ export default function ReelLandscapePage() {
           "reel_landscape_descriptions_0",
           "reel_landscape_descriptions_1",
           "reel_landscape_descriptions_2",
+          "reel_landscape_descriptions_3",
         ]}
       />
     </main>
