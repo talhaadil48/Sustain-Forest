@@ -11,7 +11,7 @@ export default function WaterWetlandPage() {
           null,
           null,
           null,
-          ["images/11.png", "/images/13.png", "/images/14.png","/images/15.png",
+          ["images/11.webp", "/images/13.webp", "/images/14.webp","/images/15.webp",
            
           ],
         ]}

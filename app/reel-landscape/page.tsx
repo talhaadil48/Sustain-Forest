@@ -11,7 +11,7 @@ export default function ReelLandscapePage() {
           null,
           null,
           null,
-          ["images/11.png", "/images/12.png", "/images/13.png",
+          ["images/11.webp", "/images/12.webp", "/images/13.webp",
            
           ],
         ]}

@@ -11,9 +11,9 @@ export default function FruitOrchardPage() {
           null,
           null,
           null,
-          ["/images/3.png",
-            "/images/11.png",
-              "/images/13.png",]
+          ["/images/3.webp",
+            "/images/11.webp",
+              "/images/13.webp",]
         ]}
         title={t("fruit_orchard_title")}
         titleDesription={t("fruit_orchard_titleDescription")}

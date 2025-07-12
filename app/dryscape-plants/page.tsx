@@ -11,8 +11,8 @@ export default function DryscapePage() {
           null,
           null,
           null,
-          ["/images/11.png",
-            "/images/13.png"]
+          ["/images/11.webp",
+            "/images/13.webp"]
         ]}
         title={t("dry_escape_title")}
         titleDesription={t("dry_escape_titleDescription")}

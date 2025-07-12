@@ -11,9 +11,9 @@ export default function MeetingAreaPage() {
           null,
           null,
           null,
-          ["/images/11.png",
-            "/images/12.png",
-              "/images/13.png",]
+          ["/images/11.webp",
+            "/images/12.webp",
+              "/images/13.webp",]
         ]}
         title={t("meeting_area_title")}
         titleDesription={t("meeting_area_titleDescription")}

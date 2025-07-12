@@ -128,8 +128,7 @@ export default function ShowcaseBanner({
       <section className="py-16 md:py-24 px-4 md:px-8 bg-green-50">
         <div className="space-y-16 md:space-y-24">
           {blockTitles.map((title, index) => {
-            const isLastBlock =
-               index === blockTitles.length - 1;
+            const isLastBlock = index === blockTitles.length - 1;
 
             return (
               <div
@@ -166,25 +165,35 @@ export default function ShowcaseBanner({
                         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
                         {/* Overlay logos if it's the last block */}
-                        {isLastBlock && Array.isArray(logoImages?.[index]) && (logoImages[index] ?? []).length > 0 && (
-                          <div className="absolute inset-0 flex flex-wrap justify-center items-center gap-4 p-4">
-                            {(logoImages[index] ?? []).map(
-                              (logoSrc: string, logoIdx: number) => (
-                                <div
-                                  key={logoIdx}
-                                  className="w-28 h-28 relative"
-                                >
-                                  <Image
-                                    src={logoSrc}
-                                    alt={`Logo ${logoIdx + 1}`}
-                                    fill
-                                    className="object-contain"
-                                  />
-                                </div>
-                              )
-                            )}
-                          </div>
-                        )}
+                        {isLastBlock &&
+                          Array.isArray(logoImages?.[index]) &&
+                          (logoImages[index] ?? []).length > 0 && (
+                            <div className="absolute inset-0 flex flex-wrap justify-center items-center gap-4 p-4">
+                              {(logoImages[index] ?? []).map(
+                                (logoSrc: string, logoIdx: number) => {
+                                  const imageName = logoSrc.split("/").pop(); // e.g. "11.webp"
+                                  const goalNumber = imageName?.split(".")[0]; // e.g. "11"
+
+                                  return (
+                                    <a
+                                      key={logoIdx}
+                                      href={`https://sdgs.un.org/goals/goal${goalNumber}`}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                      className="w-28 h-28 relative"
+                                    >
+                                      <Image
+                                        src={logoSrc}
+                                        alt={`Logo ${logoIdx + 1}`}
+                                        fill
+                                        className="object-contain"
+                                      />
+                                    </a>
+                                  );
+                                }
+                              )}
+                            </div>
+                          )}
                       </div>
                     </div>
                   </div>
