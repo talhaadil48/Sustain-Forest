@@ -60,15 +60,15 @@ export default function Footer() {
             <div className="space-y-2">
               <div className="flex items-center justify-center lg:justify-start gap-2 text-sm text-gray-700">
                 <Mail className="h-4 w-4 text-[#8a603d]" />
-                ecocentric@example.com
+                atifm@neduet.edu.pk
               </div>
               <div className="flex items-center justify-center lg:justify-start gap-2 text-sm text-gray-700">
                 <PhoneCall className="h-4 w-4 text-[#7a5435]" />
-                +92 3001010101
+                +9221 99261262 - EXT. 2346
               </div>
               <div className="flex items-center justify-center lg:justify-start gap-2 text-sm text-gray-700">
                 <MapPin className="h-4 w-4 text-[#9a6c45]" />
-                NED University, Karachi
+                NED University Of Engineering & Technology, Karachi
               </div>
             </div>
           </div>
