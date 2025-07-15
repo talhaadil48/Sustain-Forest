@@ -77,10 +77,10 @@ export default function Footer() {
           <div className="text-center lg:text-left space-y-3 md:col-span-2 lg:col-span-1">
             <h3 className="text-base sm:text-lg font-semibold flex items-center justify-center lg:justify-start gap-2 text-gray-800">
               <Leaf className="h-4 w-4 text-[#8a603d]" />
-              Our Creative Team
+              Our Team
             </h3>
 
-            <p className="text-sm font-medium text-gray-800 mb-1">Concept & Development: <span className="font-normal">Dr. Atif Mustafa</span></p>
+            <p className="text-sm font-medium text-gray-800 mb-1">Concept & Development: <span className="font-normal"> Dr. Atif Mustafa, Department of Environmental Engineering, NEDUET</span></p>
             <p className="text-sm font-medium text-gray-800 mb-1">Web Team: <span className="font-normal">Dr. Majida Kazmi</span></p>
 
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-4 gap-y-1 text-xs text-gray-500">
