@@ -4,15 +4,14 @@
   "switchLanguage": "Switch Language",
   "title": "Eco Park – A Living Model of Sustainability",
   "subtitle": "Where waste becomes resource and learning meets nature",
-  "mini-desc": "Zero-waste park with nature",
-  "description":"Eco Park is a sustainable urban space made from recycled materials and nature-based systems. It includes upcycled furniture, native fruit trees, and natural water purification. With rich biodiversity, it serves as a living classroom for climate education.",
-  "left-heading": "Welcome to",
+  "mini-desc": "Welcome to Eco Park",
+  "description":"An Eco Park is a sustainably designed green space that combines natural ecosystems, interactive learning, and sustainable technologies to educate the public on environmental challenges and solutions. It raises awareness about climate change and its impacts, promotes sustainable living practices, provide hands-on environmental education, fosters a sense of ecological responsibility and demonstrates real-world green technologies. . It includes upcycled furniture, native fruit trees, and nature-based water treatment system and solar photobioreactor. This Eco park serves as a living classroom for climate and sustainability education.",
   "right-heading": "Eco Park",
 
   "accordion_item_1_name": "Sustainable Outdoor Meeting Area",
   "accordion_item_1_description": "Discover an artistic meeting zone created entirely from discarded lab-tested concrete blocks and broken tiles. This vibrant outdoor platform blends sustainable engineering with mosaic aesthetics—turning construction waste into a functional and creative space for all.",
 
-  "accordion_item_2_name": "N.B.S. For Water Quality Improvement",
+  "accordion_item_2_name": "NBS For Water Quality Improvement",
   "accordion_item_2_description": "Explore a self-sustaining wetland system that filters pond water naturally using aquatic plants, gravel, and gravity—without any machines or chemicals. This living ecosystem demonstrates how nature can clean and balance itself sustainably.",
 
   "accordion_item_3_name": "Native Fruit Trees",
@@ -28,8 +27,8 @@
   "accordion_item_6_description": "Uncover a unique garden centerpiece created from a discarded wooden cable reel and surrounded by a giant leaf-shaped landscape made entirely from construction waste, recycled materials, and creative design.",
   
   "about_h": "About Us",
-  "about_p1": "Eco Park is a real-world model of sustainability—built from recycled construction waste and upcycled urban materials. Each space, from benches to nature based solution for water quality Improvement and reel landscape reflects resilience and eco-conscious design.",
-  "about_p2": "The park features native fruit trees, drought-tolerant plants, naturally-based water treatment, and solar-powered systems—each teaching a principle of sustainable living while requiring minimal upkeep.",
+  "about_p1": "Human beings have been entrusted with the stewardship of Earth by ALLAH Subhanu Waa Taala . It is their responsibility to safeguard its resources and use them sustainably”.Eco Park is a real-world model of sustainability—built from recycled construction waste and upcycled urban materials. Each space, from benches to nature based solution for water quality Improvement and reel landscape reflects resilience and eco-conscious design.",
+  "about_p2": "The park features native fruit trees, drought-tolerant plants, nature based water treatment system, and solar-powered systems—each teaching a principle of sustainable living while requiring minimal upkeep.",
   "about_p3": "Our goal is to show that sustainability comes from creativity and community, not big budgets. Eco Park inspires students and cities to reimagine design that works with nature, not against it.",
 
   "dry_escape_title": "Drought-Resistant Plants",
@@ -41,17 +40,17 @@
 
 
   "fruit_orchard_title": "Native Fruit Trees",
-  "fruit_orchard_titleDescription": "A diverse orchard with local trees offering shade, clean air, fresh fruits, and educational value.",
-  "fruit_orchard_descriptions_0": "You can see Chikoo trees (sapodilla), Shahtoot (Morus), Anjerr Fig (Ficus carica), Curry Pata (Murraya koenigii), Mango (Mangifera indica), and Citrus. These trees offer multiple environmental, nutritional, economic, cultural, and climate resilience benefits, making them a valuable addition to the landscape.",
+  "fruit_orchard_titleDescription": "A diverse orchard with local trees offering shade, clean air, fresh fruits and educational value.",
+  "fruit_orchard_descriptions_0": "You can see Chikoo (sapodilla), Shahtoot (Mulberry), Anjerr (Fig), Curry Pata (Curry leaf), Aam (Mango), and Citrus trees. These trees offer multiple environmental, nutritional, economic, cultural, and climate resilience benefits, making them a valuable addition to the landscape.",
   "fruit_orchard_descriptions_1": "The plantation offers key environmental benefits by purifying air, preventing soil erosion, and aiding groundwater recharge. Native trees also boost biodiversity by supporting birds and pollinators. Health-wise, they provide seasonal, chemical-free fruits with higher nutrient value, promoting food security. Economically, these low-maintenance, climate-adapted trees reduce costs and can generate income through surplus fruit sales.",
   "fruit_orchard_descriptions_2": "Culturally and educationally, these trees help preserve traditional and heirloom varieties and serve as a practical tool for learning about ecology, sustainability, and agriculture. They also foster community engagement by encouraging shared responsibility and care. In terms of climate resilience, local tree varieties are naturally drought-tolerant, require less water, and are resistant to local pests, minimizing the need for harmful pesticides and making them ideal for sustainable urban environments.",
   "fruit_orchard_descriptions_3": "Planting indigenous fruit trees promotes good health (SDG 3) by providing access to fresh, pesticide-free, and nutrient-rich food. It supports sustainable cities (SDG 11) through improved air quality, biodiversity, and community engagement. With natural drought tolerance and low water needs, it contributes to climate action (SDG 13) by enhancing resilience, reducing emissions, and preserving local ecosystems through sustainable green space design.",
 
 
-  "upcycled_furniture_title": "Upcycled Furniture",
-  "upcycled_furniture_titleDescription":"Chairs and tables made from old tyres, wood, and plastic waste. They’re strong, colorful, and tell a story of sustainability.",
-  "upcycled_furniture_descriptions_0":"The concept revolves around creating a garden table and chair set from waste materials, particularly old tyres. This is a clear example of reuse—repurposing an item without altering its original form. Instead of breaking down the tyres into raw materials, they are creatively transformed into functional furniture pieces, promoting sustainability through innovative design.",
-  "upcycled_furniture_descriptions_1": "Old tyres, which are non-biodegradable and hard to dispose of, were repurposed to reduce landfill waste and support sustainable living. This contributes to the circular economy by giving waste a new life. Tyres are low-cost or free, making tyre furniture affordable and a potential source of income through sales. The process also promotes skill development and raises awareness about recycling, especially in educational and community projects.",
+  "upcycled_furniture_title": "Reuse and Upcycled Furniture",
+  "upcycled_furniture_titleDescription":"Garden chairs made from waste materials (old tyres) an example of reuse and also chairs and tables made from discarded furniture wood an example of upcycling . They are strong, colorful, and tell a story of sustainability.",
+  "upcycled_furniture_descriptions_0":"The concept revolves around creating a garden table and chair set from waste materials, particularly old tyres. This is a clear example of reuse—repurposing an item without altering its original form. Instead of breaking down the tyres into raw materials, they are creatively transformed into functional furniture pieces, promoting sustainability through innovative design. A garden bench made from 39 kgs of recycled plastic is an eco-friendly option for outdoor seating. Reusing old, discarded furniture wood to create tables and chairs thereby reduces waste and promotes eco-conscious living",
+  "upcycled_furniture_descriptions_1": "Old tyres, which are non-biodegradable and hard to dispose of, were repurposed to reduce landfill waste and support sustainable living. This contributes to the circular economy by giving waste a new life. Tyres are low-cost or free, making tyre furniture affordable and a potential source of income through sales. The process also promotes skill development and raises awareness about recycling, especially in educational and community projects.Recycled plastic garden benches are durable, resistant to rot, rust and insects, weatherproof, low maintenance with just occasional cleaning and eco-friendly by reducing landfilling waste. Upcycled furniture reduces waste and promotes eco-conscious living.",
   "upcycled_furniture_descriptions_2": "The project combines aesthetics, function, and social value. Tyre furniture can be uniquely styled to match garden themes and is durable for outdoor use. These reused tyres serve as chairs, stools, tables, or planters. They also support community clean-up and art projects, while engaging youth or unemployed individuals in meaningful work through social enterprise initiatives.",
   "upcycled_furniture_descriptions_3": "This upcycled furniture initiative supports SDG 11 by fostering sustainable urban spaces through upcycled furniture. Aligned with SDG 12, it promotes responsible production by reusing old hardwood and reducing material waste. In line with SDG 13, it minimizes carbon impact through energy-saving, low-emission crafting methods. The design combines durability, environmental responsibility, and aesthetic value, encouraging circular and climate-conscious living.",
 
@@ -72,24 +71,23 @@
   "reel_landscape_descriptions_3": "This reel landscape design supports SDG 11 by enhancing urban green spaces with reused materials. It aligns with SDG 12 through the creative repurposing of cable reels, crushed stone, and old tree trunks. Supporting SDG 13, the project reduces construction waste and environmental impact. The result is a climate-resilient, low-maintenance, and biodiversity-friendly space that models sustainable urban landscaping.",
 
 
-  "water_wetland_title": "N.B.S. For Water Quality Improvement",
-  "water_wetland_titleDescription": "A nature-based water filtration system using gravel, sand, aquatic plants and sunlight—no power, no chemicals.",
+  "water_wetland_title": "NBS For Water Quality Improvement",
+  "water_wetland_titleDescription": "A nature-based water treatment system using gravel, aquatic plants and sunlight—no power, no chemicals.",
   "water_wetland_descriptions_0": "The system is designed to improve fish pond water quality using an integrated Nature-Based Solution (NBS) approach. It combines biological and ecological treatment processes to sustainably remove contaminants and maintain a healthy ecosystem.",
   "water_wetland_descriptions_1": "The system includes a Constructed Wetland where water passes through a series of shallow, vegetated filtration beds. Aquatic plants and microbial biofilm on substrates like gravel, sand, and rocks remove organic matter, trap sediments, and reduce nutrient loads. Additionally, a Cascading Water Feature with multiple levels enables stepwise water movement, enhancing oxygen diffusion (aeration) and supporting aerobic microbial activity essential for breaking down organic matter.",
   "water_wetland_descriptions_2": "This system offers natural detoxification without the use of chemicals and enhances dissolved oxygen levels to support aquatic life. It operates carbon-neutrally by relying on solar energy and promotes biodiversity by creating natural habitats. Overall, it provides a long-term, low-maintenance solution for effective water treatment.",
-  "water_wetland_descriptions_3": "This nature-based system for water quality improvement enhances urban sustainability (SDG 11) through eco-friendly water purification. It supports climate action (SDG 13) via solar-powered, chemical-free detoxification. By improving water quality, it safeguards aquatic ecosystems (SDG 14) and promotes terrestrial biodiversity (SDG 15) through natural habitat creation. The system exemplifies long-term, low-maintenance ecological engineering for resilient communities and healthy ecosystems.",
+  "water_wetland_descriptions_3": "This nature-based system for water quality improvement enhances urban sustainability (SDG 11) through eco-friendly water treatment. It supports climate action (SDG 13) via solar-powered, chemical-free detoxification. By improving water quality, it safeguards aquatic ecosystems (SDG 14) and promotes terrestrial biodiversity (SDG 15) through natural habitat creation. The system exemplifies long-term, low-maintenance ecological engineering for resilient communities and healthy ecosystems.",
 
 
   "solar_photobioreactor_title": "Solar Photobioreactor",
   "solar_photobioreactor_titleDescription": "A sustainable system that uses sunlight and microalgae to capture CO₂ from the air—off-grid, nature-powered, and climate-positive.",
   "solar_photobioreactor_descriptions_0": "We built the system using a transparent water tank filled with fast-growing microalgae and powered it with a solar panel for circulation. The setup enables algae to grow in sunlight while absorbing CO₂. It harnesses photosynthesis to capture CO₂ and produces biomass rich in oil, carbohydrates, and proteins—ideal for eco-friendly biofuel and other products. Compared to terrestrial crops, microalgae deliver significantly higher productivity and efficiency in both carbon capture and biofuel yield.",
-  "solar_photobioreactor_descriptions_1": "Growing urbanization and reliance on fossil fuels in cities have exacerbated air pollution, leading to significant public health concerns. This pSolar photobioreactor explores the use of microalgae for the sequestration of atmospheric carbon dioxide (CO₂) emitted from human activities.",
-  "solar_photobioreactor_descriptions_2": "Preliminary findings indicate that neem tree (Azadirachta indica) demonstrate a carbon sequestration capacity of approximately 0.082 kg of CO₂ per year while a 250-liter urban photobioreactor can mitigate up to 0.38 kg of CO₂ annually—equivalent to the CO₂ absorption capacity of 5 mature neem trees.",
+  "solar_photobioreactor_descriptions_1": "Growing urbanization and reliance on fossil fuels in cities have exacerbated air pollution, leading to significant public health concerns. Microalgae in the solar photobioreactor has the cabaility tosequester atmospheric carbon dioxide (CO₂) emitted from human activities.",
   "solar_photobioreactor_descriptions_3": "This solar-powered photobioreactor supports SDG 3 by reducing air pollution through CO₂ capture, enhancing urban health. Aligned with SDG 9, it showcases innovation in bioengineering and carbon mitigation. It advances SDG 11 by integrating clean technology into city infrastructure. Supporting SDG 13, the system uses microalgae to sequester carbon sustainably, equivalent to the impact of multiple mature trees—offering scalable solutions for climate-resilient development.",
 
-  "section_how_we_made_it": "How We Made It",
-  "section_about_it": "What It's All About",
-  "section_impact_on_environment": "Our Impact on the Environment",
+  "section_how_we_made_it": "Project Concept",
+  "section_about_it": "Project Benefits",
+  "section_impact_on_environment": "Impact on the Environment",
    "linked_to_sdgs": "Driving Impact Through SDGs",
  "thanks_heading": "Thank You for Exploring",
   "thanks_subheading": "Our vision and commitment to creating a better tomorrow",
