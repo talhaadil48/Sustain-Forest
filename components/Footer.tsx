@@ -81,7 +81,7 @@ export default function Footer() {
             </h3>
 
             <p className="text-sm font-medium text-gray-800 mb-1">Concept & Development: <span className="font-normal"> Dr. Atif Mustafa, Department of Environmental Engineering, NEDUET</span></p>
-            <p className="text-sm font-medium text-gray-800 mb-1">Web Team: <span className="font-normal">Dr. Majida Kazmi</span></p>
+            <p className="text-sm font-medium text-gray-800 mb-1">Web Team: <span className="font-normal"> Dr. Majida Kazmi, Department of Computer and Information Systems Engineering, NEDUET</span></p>
 
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-4 gap-y-1 text-xs text-gray-500">
               {[
