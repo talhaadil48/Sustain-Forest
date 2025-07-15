@@ -82,10 +82,29 @@ export default function Footer() {
 
             <p className="text-sm font-medium text-gray-800 mb-1">Concept & Development: <span className="font-normal"> Dr. Atif Mustafa, Department of Environmental Engineering, NEDUET</span></p>
             <p className="text-sm font-medium text-gray-800 mb-1">Web Team: <span className="font-normal"> Dr. Majida Kazmi, Department of Computer and Information Systems Engineering, NEDUET</span></p>
-
-          </div>
-        </div>
-      </div>
-    </footer>
-  )
-}
+            
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-4 gap-y-1 text-xs text-gray-500">
+  {[
+    "Talha Adil",
+    "Manahil Adeel",
+    "Shafia Arif",
+    "Omar Rashid",
+    "Sitwat Samara",
+    "Marium Shad",
+  ].map((name, idx) => (
+    <div key={idx} className="flex items-center justify-center gap-1">
+      <div
+        className="w-2 h-2 rounded-full"
+        style={{
+          backgroundColor:
+            idx % 3 === 0
+              ? "#8a603d"
+              : idx % 3 === 1
+              ? "#7a5435"
+              : "#9a6c45",
+        }}
+      ></div>
+      {name}
+    </div>
+  ))}
+</div>
