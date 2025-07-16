@@ -9,7 +9,7 @@ function Header() {
 
   return (
     <div
-      className="relative h-screen w-full bg-cover bg-center p-[10%] overflow-hidden"
+      className="relative h-screen w-full bg-cover bg-center p-[10%]"
       style={{ backgroundImage: "url('/images/bg-eco.webp')" }}
     >
       {/* Blurred left half with animation */}
@@ -22,7 +22,6 @@ function Header() {
       <div className="absolute inset-0 items-center flex flex-col justify-center bottom-[10%]">
         <div className="text-white mb-4 text-base sm:text-lg md:text-xl text-[19px] animate-fade-in-up animation-delay-300">
           <div className="flex gap-3">
-            <p>{t("mini-desc")}</p>
           </div>
         </div>
         <div className="relative flex">

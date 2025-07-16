@@ -10,7 +10,7 @@ interface ShowcaseBannerProps {
   images: string[];
   title: string;
   titleDesription: string;
-  audios: string[];
+  audios: string;
   logoImages?: (null | string[])[]; // Optional prop for logo images
 }
 
@@ -65,7 +65,10 @@ export default function ShowcaseBanner({
   ];
 
   return (
-    <div className="w-full">
+    <div className="w-full relative">
+      <div className="fixed top-10 right-2 z-50">
+      <SpeakText file="showcase-banner"/>
+      </div>
       <style jsx>{`
         @keyframes fadeInUp {
           from {
@@ -219,7 +222,6 @@ export default function ShowcaseBanner({
                           `Discover the fascinating details about ${title.toLowerCase()} and how it shapes our approach to innovation and sustainability.`}
                       </p>
                       <div>
-                        <SpeakText file={audios[index]} />
                       </div>
                     </div>
 

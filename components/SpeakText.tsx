@@ -66,7 +66,7 @@ export default function SpeakAudio({ file }: SpeakAudioProps) {
         preload="auto"
       />
       <button onClick={handleTogglePlay}>
-        {isSpeaking ? <Square size={24} /> : <Volume2 size={24} />}
+        {isSpeaking ? <Square size={30} /> : <Volume2 size={30} />}
       </button>
     </div>
   );

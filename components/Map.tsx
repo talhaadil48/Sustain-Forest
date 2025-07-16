@@ -44,6 +44,11 @@ const mapPoints: MapPoint[] = [
     label: "Meeting point",
     style: { bottom: "14%", left: "12%" },
   },
+  {
+    id: "7", // Meeting point
+    label: "Solar Photobioreactor",
+    style: { top: "20%", left: "57%" },
+  },
 ];
 
 export default function ImageMap({ onSelect }: Props) {
