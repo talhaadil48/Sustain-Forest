@@ -66,7 +66,7 @@ export default function ShowcaseBanner({
 
   return (
     <div className="w-full relative">
-      <div className="fixed top-[330px] right-[22px] z-50">
+      <div className="fixed bottom-44 right-6 z-50">
       <SpeakText file={audios} desgined/>
       </div>
       <style jsx>{`
