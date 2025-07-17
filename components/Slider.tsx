@@ -185,7 +185,7 @@ export default function IntegratedAccordion() {
             {t("about_p3")}
           </p>
           <div className="flex justify-center mt-4 ">
-          <SpeakText file="about_combined" />
+          <SpeakText file="about_combined" desgined={false}/>
           </div>
           
         </div>

@@ -1,5 +1,4 @@
 "use client";
-import SpeakAudio from "@/components/SpeakText";
 import { useLanguage } from "./LanguageProvider.";
 import SpeakText from "@/components/SpeakText";
 
@@ -42,7 +41,7 @@ function Header() {
         <p>{t("description")}</p>
 
         <div className="flex justify-center mt-3">
-          <SpeakText file="description" />
+          <SpeakText file="description" desgined={false} />
         </div>
       </div>
     </div>

@@ -9,9 +9,10 @@ let currentAudio: HTMLAudioElement | null = null;
 
 interface SpeakAudioProps {
   file: string;
+  desgined : boolean;
 }
 
-export default function SpeakAudio({ file }: SpeakAudioProps) {
+export default function SpeakAudio({ file,desgined }: SpeakAudioProps) {
   const { language } = useLanguage();
   const audioRef = useRef<HTMLAudioElement>(null);
   const [isSpeaking, setIsSpeaking] = useState(false);
@@ -65,9 +66,12 @@ export default function SpeakAudio({ file }: SpeakAudioProps) {
         src={`/voice/${language}/${file}.mp3`}
         preload="auto"
       />
-      <button onClick={handleTogglePlay}>
-        {isSpeaking ? <Square size={30} className="text-gray-500" /> : <Volume2 size={30} className="text-gray-500"/>}
-      </button>
+      <button
+        onClick={handleTogglePlay}
+        className={desgined ? "p-4 bg-blue-500 rounded-full hover:scale-105" : ""}
+      >
+        {isSpeaking ? <Square className="text-white w-6 h-6" /> : <Volume2 size={30} className="text-white w-6 h-6"/>}
+      </button> 
     </div>
   );
 }
