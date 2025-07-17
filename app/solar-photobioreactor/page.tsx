@@ -30,12 +30,10 @@ export default function ReelLandscapePage() {
           t("solar_photobioreactor_descriptions_3"),
         ]}
         audios={
-          [
-            "solar_photobioreactor_descriptions_0",
-          "solar_photobioreactor_descriptions_1",
-          "solar_photobioreactor_descriptions_2",
-          "solar_photobioreactor_descriptions_3",
-          ]
+          
+            "solar_photobioreactor_descriptions"
+        
+          
         }
       />
     </main>

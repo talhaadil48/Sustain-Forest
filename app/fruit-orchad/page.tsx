@@ -30,13 +30,10 @@ export default function FruitOrchardPage() {
           t("fruit_orchard_descriptions_3"),
         ]}
         audios= {
-          [
-            "fruit_orchard_descriptions_0",
-            "fruit_orchard_descriptions_1",
-            "fruit_orchard_descriptions_2",
-            "fruit_orchard_descriptions_3",
-          ]
-        
+          
+            "fruit_orchard_descriptions"
+    
+     
         }
       />
     </main>

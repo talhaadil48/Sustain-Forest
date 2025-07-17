@@ -30,12 +30,10 @@ export default function UpcycledFurniturePage() {
           t("upcycled_furniture_descriptions_3"),
         ]}
         audios={
-          [
-            "upcycled_furniture_descriptions_0",
-            "upcycled_furniture_descriptions_1",
-            "upcycled_furniture_descriptions_2",
-            "upcycled_furniture_descriptions_3",
-          ]
+          
+            "upcycled_furniture_descriptions"
+            
+          
         }
       />
     </main>

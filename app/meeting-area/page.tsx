@@ -30,12 +30,9 @@ export default function MeetingAreaPage() {
           t("meeting_area_descriptions_3"),
         ]}
         audios={
-          [
-            "meeting_area_descriptions_0",
-            "meeting_area_descriptions_1",
-            "meeting_area_descriptions_2",
-            "meeting_area_descriptions_3",
-          ]
+          
+            "meeting_area_descriptions"
+           
         }
       />
     </main>

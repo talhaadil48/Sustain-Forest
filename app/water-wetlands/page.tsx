@@ -32,12 +32,10 @@ export default function WaterWetlandPage() {
         ]}
 
         audios={
-          [
-            "water_wetland_descriptions_0",
-            "water_wetland_descriptions_1",
-            "water_wetland_descriptions_2",
-            "water_wetland_descriptions_3",
-          ]
+          
+            "water_wetland_descriptions"
+          
+          
         }
       />
     </main>

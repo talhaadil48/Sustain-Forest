@@ -7,13 +7,7 @@ export default function DryscapePage() {
   return (
     <main>
       <ShowcaseBanner
-        logoImages={[
-          null,
-          null,
-          null,
-          ["/images/11.webp",
-            "/images/13.webp"]
-        ]}
+        logoImages={[null, null, null, ["/images/11.webp", "/images/13.webp"]]}
         title={t("dry_escape_title")}
         titleDesription={t("dry_escape_titleDescription")}
         images={[
@@ -28,14 +22,7 @@ export default function DryscapePage() {
           t("dry_escape_descriptions_2"),
           t("dry_escape_descriptions_3"),
         ]}
-        audios={
-          [
-            "dry_escape_descriptions_0",
-            "dry_escape_descriptions_1",
-            "dry_escape_descriptions_2",
-            "dry_escape_descriptions_3",
-          ]
-        }
+        audios={"dry_escape_descriptions"}
       />
     </main>
   );
