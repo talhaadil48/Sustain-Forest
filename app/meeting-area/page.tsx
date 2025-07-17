@@ -19,9 +19,9 @@ export default function MeetingAreaPage() {
         titleDesription={t("meeting_area_titleDescription")}
         images={[
           "/images/Picture2.webp?height=400&width=600",
-          "/images/Picture2.webp?height=400&width=600",
-          "/images/Picture2.webp?height=400&width=600",
-          "/images/Picture2.webp?height=400&width=600",
+          "/images/newpic20.webp?height=400&width=600",
+          "/images/newpic21.webp?height=400&width=600",
+          "/images/newpic21.webp?height=400&width=600",
         ]}
         descriptions={[
           t("meeting_area_descriptions_0"),
