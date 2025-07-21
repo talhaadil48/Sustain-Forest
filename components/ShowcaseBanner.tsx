@@ -274,7 +274,6 @@ export default function ShowcaseBanner({
                 {t("thanks_back_home")}
               </a>
             </div>
-            l
           </div>
         </div>
       </section>
