@@ -1,0 +1,12 @@
+name: Ping Supabase Daily
+
+on:
+  schedule:
+    - cron: '* * * * *'   # Every day at 6 AM UTC
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call Supabase Ping Endpoint
+        run: curl -X GET https://sus-forest.vercel.app/api/ping
