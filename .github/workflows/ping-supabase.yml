@@ -2,7 +2,8 @@ name: Ping Supabase Daily
 
 on:
   schedule:
-    - cron: '* * * * *'   # Every day at 6 AM UTC
+    - cron: '* * * * *'   # every minute for testing
+  workflow_dispatch:
 
 jobs:
   ping:
